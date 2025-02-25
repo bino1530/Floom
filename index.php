@@ -40,7 +40,7 @@ include_once 'header.php';
             </div>
           </div>
           <div class="floom-ads">
-            <img src="./asset/image/index/background_pink.avif" alt="" />
+            <img src="asset/image/index/background_pink.avif" alt="" />
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ include_once 'header.php';
           <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
             <div class="best-seller-image new">
               <img
-                src="./asset/image/index/Strawnberry_Shortcake.avif"
+                src="asset/image/index/Strawnberry_Shortcake.avif"
                 alt="" />
             </div>
             <div class="best-seller-info">
@@ -74,7 +74,7 @@ include_once 'header.php';
           </div>
           <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
             <div class="best-seller-image">
-              <img src="./asset/image/index/Always.avif" alt="" />
+              <img src="asset/image/index/Always.avif" alt="" />
             </div>
             <div class="best-seller-info">
               <p><strong>Always</strong></p>
@@ -88,7 +88,7 @@ include_once 'header.php';
           </div>
           <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
             <div class="best-seller-image">
-              <img src="./asset/image/index/Picnic.avif" alt="" />
+              <img src="asset/image/index/Picnic.avif" alt="" />
             </div>
             <div class="best-seller-info">
               <p><strong>Picnic</strong></p>
@@ -102,7 +102,7 @@ include_once 'header.php';
           </div>
           <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
             <div class="best-seller-image">
-              <img src="./asset/image/index/Wild_About_U.avif" alt="" />
+              <img src="asset/image/index/Wild_About_U.avif" alt="" />
             </div>
             <div class="best-seller-info">
               <p><strong>Wild About U</strong></p>
@@ -120,7 +120,7 @@ include_once 'header.php';
         <div class="grid">
           <div class="Monthly_Flowers view-left">
             <div class="Monthly_Flowers-image">
-              <img src="./asset/image/index/Monthly_Flowers.avif" alt="" />
+              <img src="asset/image/index/Monthly_Flowers.avif" alt="" />
             </div>
             <div class="Monthly_Flowers-info">
               <p>45,000 5-Star Reviews</p>
@@ -142,7 +142,7 @@ include_once 'header.php';
         <div class="grid">
           <div class="Flowers-Delivery view-right">
             <div class="Flowers-Delivery-image">
-              <img src="./asset/image/index/Flowers-Delivery.jpg" alt="" />
+              <img src="asset/image/index/Flowers-Delivery.jpg" alt="" />
             </div>
             <div class="Flowers-Delivery-info">
               <p>NYC, LA, CHI + MORE</p>
@@ -163,7 +163,7 @@ include_once 'header.php';
         <div class="grid">
           <div class="Birthday-Flowers view-left">
             <div class="Birthday-Flowers-image">
-              <img src="./asset/image/index/Flowers-Birthday.jpg" alt="" />
+              <img src="asset/image/index/Flowers-Birthday.jpg" alt="" />
             </div>
             <div class="Birthday-Flowers-info">
               <h1>
@@ -183,7 +183,7 @@ include_once 'header.php';
         <div class="grid">
           <div class="Visit-My-Flowers view-right">
             <div class="Visit-My-Flowers-image">
-              <img src="./asset/image/index/Visit1.jpg" alt="" />
+              <img src="asset/image/index/Visit1.jpg" alt="" />
             </div>
             <div class="Visit-My-Flowers-info">
               <p>OPEN IN SF, SD, LA + OC</p>
@@ -217,7 +217,7 @@ include_once 'header.php';
             <div class="video-overlay"></div>
             <video class="media-1-source media-position" autoplay muted loop>
               <source
-                src="./asset/media/bed_side_bouquet (1080p).mp4"
+                src="asset/media/bed_side_bouquet (1080p).mp4"
                 type="video/mp4" />
             </video>
           </div>
@@ -225,7 +225,7 @@ include_once 'header.php';
             <div class="video-overlay-bottom"></div>
             <video class="media-2-source media-position" autoplay muted loop>
               <source
-                src="./asset/media/floom-uk-london-sameday_delivery-editorial3 (1080p).mp4"
+                src="asset/media/floom-uk-london-sameday_delivery-editorial3 (1080p).mp4"
                 type="video/mp4" />
             </video>
           </div>
@@ -233,7 +233,7 @@ include_once 'header.php';
             <div class="video-overlay"></div>
             <video class="media-3-source media-position" autoplay muted loop>
               <source
-                src="./asset/media/untitled (1080p).mp4"
+                src="asset/media/untitled (1080p).mp4"
                 type="video/mp4" />
             </video>
           </div>
@@ -245,7 +245,7 @@ include_once 'header.php';
         <div class="Floom-Benefits-Row row">
           <div class="Floom-Benefits-col col-lg-4 col-sm-12 col-12">
             <div class="Floom-Benefits-image">
-              <img src="./asset/image/index/Flowers-eyes.gif" alt="" />
+              <img src="asset/image/index/Flowers-eyes.gif" alt="" />
               <p><strong>What you see is what you get</strong></p>
               <p>
                 Love the bouquet on your screen? That's exactly what our local
@@ -256,7 +256,7 @@ include_once 'header.php';
           </div>
           <div class="Floom-Benefits-col col-lg-4 col-sm-12 col-12">
             <div class="Floom-Benefits-image">
-              <img src="./asset/image/index/sun.gif" alt="" />
+              <img src="asset/image/index/sun.gif" alt="" />
               <p><strong>Always unique, never generic </strong></p>
               <p>
                 We only work with the most talented and unique artisans, and
@@ -267,7 +267,7 @@ include_once 'header.php';
           </div>
           <div class="Floom-Benefits-col col-lg-4 col-sm-12 col-12">
             <div class="Floom-Benefits-image">
-              <img src="./asset/image/index/hands.gif" alt="" />
+              <img src="asset/image/index/hands.gif" alt="" />
               <p><strong>Hand-delivered with care and attention</strong></p>
               <p>
                 Each of our orders is professionally arranged, wrapped and
@@ -293,27 +293,27 @@ include_once 'header.php';
           <div class="Custom-Flowers-Col col-lg-3 col-sm-6 col-12">
             <div class="Custom-Flowers-image common-title title-birthdays">
               <img
-                src="./asset/image/index/floom-birthday-category.avif"
+                src="asset/image/index/floom-birthday-category.avif"
                 alt="" />
             </div>
           </div>
           <div class="Custom-Flowers-Col col-lg-3 col-sm-6 col-12">
             <div class="Custom-Flowers-image common-title title-new-baby">
               <img
-                src="./asset/image/index/floom-new-baby-flowers.avif"
+                src="asset/image/index/floom-new-baby-flowers.avif"
                 alt="" />
             </div>
           </div>
           <div class="Custom-Flowers-Col col-lg-3 col-sm-6 col-12">
             <div class="Custom-Flowers-image common-title title-anniversary">
               <img
-                src="./asset/image/index/floom-pink-hero-vday.avif"
+                src="asset/image/index/floom-pink-hero-vday.avif"
                 alt="" />
             </div>
           </div>
           <div class="Custom-Flowers-Col col-lg-3 col-sm-6 col-12">
             <div class="Custom-Flowers-image common-title title-sympathy">
-              <img src="./asset/image/index/floom-sympathy-hero.avif" alt="" />
+              <img src="asset/image/index/floom-sympathy-hero.avif" alt="" />
             </div>
           </div>
         </div>
