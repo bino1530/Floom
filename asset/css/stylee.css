@@ -62,11 +62,20 @@ body {
 .logo {
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   padding: 0;
+  margin: 0 auto;
 }
-.logo img {
-  width: 15%;
+.logo a{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+}
+
+.logo img{
+  width: 20%;
   cursor: pointer;
 }
 
@@ -79,6 +88,17 @@ body {
   margin: 20px;
   cursor: pointer;
 }
+.login {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+.login .username, .logout{
+  width: 15%;
+  cursor: pointer;
+}
+
+
 .dropdown-menu {
   background-color: rgba(255, 255, 255);
   visibility: hidden;

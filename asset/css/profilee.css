@@ -1,0 +1,61 @@
+.username-account{
+    font-weight: 700;
+    color: var(--button_color);
+}
+.profile-page-row{
+    width: 100%;
+}
+.profile-page-col{
+    margin-top: 200px;
+}
+.profile-page-col ul{
+    padding: 30px;
+}
+.profile-page-col li {
+    position: relative;
+    margin: 15px 0px;
+    border-bottom: 1px solid transparent; 
+    width: 80%;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-page-col li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--button_color); 
+    transition: width 0.3s ease-in-out;
+}
+
+.profile-page-col li:hover::before {
+    width: 100%; 
+}
+.profile-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-content i {
+    position: relative;
+}
+.have-no-order{
+    width: 100%;
+}
+.have-no-order p{
+    margin: 0;
+    padding: 10px;
+    background-color: var(--button_color);
+    color: white;
+}
+.have-no-order p a{
+    border-bottom: 1px solid white;
+    color: white;
+
+
+}

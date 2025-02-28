@@ -81,10 +81,18 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.row p{
+.error{
+    margin: 5px 0px;
+    text-align: right;
+    color: darkred;
+}
+
+.presslogin{
     text-align: center;
     color: #797979;
+    margin: 0px;
 }
+
 
 
 .row a{
