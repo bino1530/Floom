@@ -93,6 +93,8 @@ function loginUser($conn, $newUsername, $pwd) {
         session_start();
         $_SESSION["userid"] = $uidExists['User_id'];
         $_SESSION["username"] = $uidExists['Username'];
+        $_SESSION["fullname"] = $uidExists['HoTen'];
+        $_SESSION["email"] = $uidExists['Email'];
         $_SESSION["role"] = $role;
 
         if ($role === 'Admin') {

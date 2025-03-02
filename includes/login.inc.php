@@ -6,7 +6,6 @@ if (isset($_POST["login-submit"])) {
     require_once "../includes/connect.php";
     require_once "../includes/function.inc.php";
     if (emptyInputLogin($newUsername, $pwd) !== false) {
-        echo "Empty input detected.<br>";
         header("location: ../page/login.php?error=emptyinput");
         exit();
     }

@@ -16,7 +16,7 @@ include_once '../main/header1.php';
                 ?>
             </ul>
         </div>
-        <div class="profile-page-col col-lg-9 col-sm-12 col-12">
+        <div class="profile-page-col col-lg-9 col-sm-12 col-12 profile-main">
             <?php
             $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // Mặc định là dashboard
             switch ($page) {

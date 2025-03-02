@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../asset/css/loginn.css">
     <link rel="stylesheet" href="../asset/css/bass.css">
+    <link rel="stylesheet" href="../asset/css/responsive.css">
+
     <title>Document</title>
 </head>
 <?php
@@ -72,8 +74,6 @@ if (isset($_GET['error'])) {
                         <p class="presslogin">Already have an account? <a href="login.php"> Sign in</a></p>
                     </div>
                 </form>
-
-
             </section>
         </div>
 

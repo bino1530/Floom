@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,11 +26,10 @@ session_start();
   <script src="../asset/js/dropdown.js"></script>
   <script src="../asset/js/appear.js"></script>
   <link rel="stylesheet" href="../asset/css/bass.css" />
-  <link rel="stylesheet" href="../asset/css/stylee.css" />
+  <link rel="stylesheet" href="../asset/css/style.css" />
   <link rel="stylesheet" href="../asset/css/responsive.css" />
   <link rel="stylesheet" href="../asset/css/anim.css" />
   <link rel="stylesheet" href="../asset/css/profilee.css">
-  
   <script></script>
   <title>Document</title>
 </head>
@@ -80,7 +80,7 @@ session_start();
           </ul>
         </div>
         <div class="logo">
-          <a href="../index.php"><img src="../asset/image/index/floom.png" alt=""/></a>
+          <a href="../index.php"><img src="../asset/image/index/floom.png" alt="" /></a>
         </div>
         <div class="login">
           <?php

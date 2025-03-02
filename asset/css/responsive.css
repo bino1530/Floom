@@ -475,7 +475,10 @@
         cursor: pointer;
         transition: transform 0.3s ease-in-out , background-color 0.3s ease;
     }
-
+    .logo-image img{
+        width: 20%;
+    }
+    
 }
 
 @media (max-width: 567px) {
@@ -489,7 +492,7 @@
         padding: 20px;
     }
     .Monthly_Flowers-image{
-        content: url(/asset/image/index/Monthly-Flowers-respons.jpg);
+        content: url(../image/index/Monthly-Flowers-respons.jpg);
         width: 100%;
     }
     .Monthly_Flowers-image img{
@@ -538,7 +541,7 @@
 
     }
     .Flowers-Delivery-image{
-        content: url(/asset/image/index/Flowers-Deliver-repons.jpg);
+        content: url(../image/index/Flowers-Deliver-repons.jpg);
         width: 100%;
     }
     .Flowers-Delivery-image img{
@@ -587,7 +590,7 @@
 
     }
     .Birthday-Flowers-image{
-        content: url(/asset/image/index/Flowers-Birthday-respons.jpg);
+        content: url(../image/index/Flowers-Birthday-respons.jpg);
         width: 100%;
     }
     .Birthday-Flowers-image img{
@@ -636,7 +639,7 @@
 
     }
     .Visit-My-Flowers-image{
-        content: url(/asset/image/index/Flowers-Visit-respons.jpg);
+        content: url(../image/index/Flowers-Visit-respons.jpg);
         width: 100%;
     }
     .Visit-My-Flowers-image img{
@@ -698,4 +701,12 @@
         text-align: center;
         margin-top: 15px;
       }
+
+    .address-col h4,h5{
+        font-size: 14px;
+    }
+    .logo-image img{
+        width: 20%;
+    }
+    
 }
