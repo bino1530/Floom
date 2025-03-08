@@ -1,8 +1,16 @@
 <?php
 include("header.php");
+if(isset($_GET['id'])){
+  $MaDanhMuc = $_GET['id'];
+  include("../includes/connect.php");
+  $sql = "SELECT * FROM tb_danhmuc WHERE MaDanhMuc = :MaDanhMuc";
+  $sta = $conn->prepare($sql);
+  $sta->bindParam(':MaDanhMuc', $MaDanhMuc, PDO::PARAM_INT);
+  $sta->execute();
+  if($sta->rowCount()){
+      $projectlist = $sta->fetch(PDO::FETCH_OBJ);
+  }
 ?>
-
-
 <!-- ========== tab components start ========== -->
 <section class="tab-components">
   <div class="container-fluid">
@@ -38,33 +46,36 @@ include("header.php");
 
     <!-- ========== form-elements-wrapper start ========== -->
     <div class="form-elements-wrapper">
-      <form action="../includes/projectlist_add.inc.php" method="post" enctype="multipart/form-data">
+      <form action="../includes/form-projectlist-update.inc.php" method="post" enctype="multipart/form-data">
         <div class="row">
           <div class="col-lg-12">
             <!-- input style start -->
             <div class="card-style mb-30">
-              <h6 class="mb-25">Project</h6>
+              <h6 class="mb-25">Project List</h6>
               <div class="input-style-1">
                 <label>Project List ID</label>
-                <input type="text" name="project_id"   placeholder="Project List ID" />
+                <input type="text" name="project_id" value="<?=$projectlist -> MaDanhMuc?>" placeholder="Project ID" />
               </div>
               <!-- end input -->
               <div class="input-style-2">
                 <label>Project List Name</label>
-                <input type="text" name="project_name" placeholder="Project List Name" />
+                <input type="text" name="project_name" value="<?=$projectlist -> TenDanhMuc?>" placeholder="Project Name" />
               </div>
               <!-- end input -->
               <div class="input-style-3">
                 <label>Project List Subscription</label>
-                <input type="text" name="project_subc" placeholder="Project List Subscription" />
+                <input type="text" name="project_subc" value="<?=$projectlist -> MoTaDM?>" placeholder="Project Subscription" />
               </div>
               <!-- end input -->
               <div class="form-row">
+              <input type="hidden" name="project_id" value="<?= $projectlist -> MaDanhMuc?>">
                 <button type="submit" name="submit" class="save-changes">Save Changes</button>
               </div>
             </div>
       </form>
-
+<?php
+}
+?>
       <!-- end card -->
 
     </div>

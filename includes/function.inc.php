@@ -99,6 +99,7 @@ function loginUser($conn, $newUsername, $pwd) {
         $_SESSION["username"] = $uidExists['Username'];
         $_SESSION["fullname"] = $uidExists['HoTen'];
         $_SESSION["email"] = $uidExists['Email'];
+        $_SESSION["userpassword"] = $uidExists['Userpassword'];
         $_SESSION["role"] = $role;
 
         if ($role === 'Admin') {

@@ -14,16 +14,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['full_name']) && isset(
     if ($stmt->execute()) {
         $successMessage = "Thay đổi đã được lưu thành công!";
     }
+    
 }
 
-// Handle profile image update
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['current-password']) && isset($_POST['new-password']) && isset($_POST['repeat-password'])) {
+    $currentPassword = $_POST['current-password'];
+    $newPassword = $_POST['new-password'];
+    $repeatPassword = $_POST['repeat-password'];
+    if ($newPassword == $repeatPassword) {
+        $stmt = $conn->prepare("UPDATE tb_user SET Userpassword = :Userpassword WHERE user_id = :user_id");
+        $stmt->bindParam(':Userpassword', $newPassword, PDO::PARAM_STR);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            $successMessage1 = "Password has been successfully changed!";
+        }
+    } else {
+        $errorMessage = "New passwords do not match!";
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['hinhanh']) && $_FILES['hinhanh']['error'] === UPLOAD_ERR_OK) {
     $file = $_FILES['hinhanh'];
-
-    // Validate file type
     $fileType = mime_content_type($file['tmp_name']);
     $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-
     if (in_array($fileType, $allowedTypes)) {
         $fileData = file_get_contents($file['tmp_name']);
 
@@ -37,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['hinhanh']) && $_FILES
         $errorMessage = "Loại tệp không hợp lệ. Chỉ chấp nhận JPEG, PNG và GIF.";
     }
 }
-
 $stmt = $conn->prepare("SELECT HoTen, Email FROM tb_user WHERE user_id = :user_id");
 $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmt->execute();

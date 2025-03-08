@@ -110,7 +110,7 @@ input:focus {
 }
 
 .save-changes:hover {
-    background-color: darkblue; 
+    background-color: rgb(43, 43, 98); 
 }
 
 .password-section {

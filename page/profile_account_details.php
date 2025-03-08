@@ -1,6 +1,6 @@
 <?php
     include_once ("../includes/profile_details.inc.php");
-?>
+    ?>
 <body>
     <div class="profile_content_layout" id="account-details">
         <h2>Account Details</h2>
@@ -28,7 +28,7 @@
 
         <div class="password-section">
             <div class="password-title">Change Password</div>
-            <form action="../includes/change_password.inc.php" method="post">
+            <form action="" method="post">
                 <div class="form-row">
                     <label for="current-password">Current Password:</label>
                     <input type="password" id="current-password" name="current-password" required>
@@ -45,6 +45,9 @@
                     <button type="submit" class="save-changes">Save Changes</button>
                 </div>
             </form>
+            <?php if (isset($successMessage1)) { ?>
+                <div class="success-message"><?php echo $successMessage1; ?></div>
+            <?php } ?>
         </div>
     </div>
 </body>

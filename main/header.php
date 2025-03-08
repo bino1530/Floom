@@ -1,16 +1,14 @@
 <?php
 session_start();
-require_once 'includes/connect.php'; // Ensure this file contains your database connection
+require_once 'includes/connect.php'; 
 
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
-
     $sql = "SELECT HinhAnh FROM tb_user WHERE Username = :username";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
     if ($user && !empty($user["HinhAnh"])) {
         $profilePic = "data:image/jpeg;base64," . base64_encode($user["HinhAnh"]);
     } else {
@@ -104,9 +102,12 @@ if (isset($_SESSION["username"])) {
           if (isset($_SESSION["username"])) {
             if (isset($_SESSION["role"]) && $_SESSION["role"] === 'Admin') {
                 echo "<a href='admin/index.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
-            } else {
+              } else {
+                
                 echo "<a href='page/profile.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
-            }
+                echo "<a href=''><i class='fa-solid fa-bag-shopping fa-lg'></i></a> ";
+            
+              }
         } else {
             echo "<a href='page/login.php'><i class='fa-solid fa-user fa-lg'></i></a>";
             echo "<a href=''><i class='fa-solid fa-bag-shopping fa-lg'></i></a> ";

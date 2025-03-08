@@ -1701,6 +1701,10 @@ h6,
   font-weight: 500;
   color: #1A2142;
   font-size: 14px;
+
+}
+.text-danger i{
+ width: 10%; 
 }
 .table td.min-width {
   padding: 5px;
@@ -1722,18 +1726,19 @@ h6,
   color: #365CF5;
 }
 .table .lead-info {
-  min-width: 200px;
+  min-width: 100px;
 }
 .table .lead-email {
-  min-width: 150px;
+  min-width: 100px;
   white-space: nowrap;
 }
 .table .lead-phone {
-  min-width: 160px;
+  min-width: 100px;
 }
 .table .lead-company {
-  min-width: 180px;
+  min-width: 50px;
 }
+
 .table .referrals-image {
   min-width: 150px;
 }
@@ -3050,7 +3055,7 @@ h6,
 }
 .form-row .save-changes{
   width: 100%;
-  padding: 12px 24px;
+  padding: 12px 0px;
   font-size: 16px;
   background-color: var(--button_color); 
     border: none;
@@ -3062,7 +3067,7 @@ h6,
     color: #fff;
 }
 .save-changes:hover {
-  background-color: darkblue; 
+  background-color: rgb(43, 43, 98); 
 }
 
 @media (max-width: 767px) {
