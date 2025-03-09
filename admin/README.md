@@ -16,9 +16,9 @@ PlainAdmin is a free and open-source **Vanilla JS admin dashboard template** bas
 ### [⚡ PRO Version](https://plainadmin.com/pricing)
 
 
-It comes with a minimal UI design that suits almost any kind of web project and offers the best possible user experience. PlainAdmin comes with SCSS files, an organized codebase, gulp support for efficient workflow, rich documentation, and everything else that you can expect from a modern admin template.
+It comes with a minimal UI design that suits almost any kind of web product and offers the best possible user experience. PlainAdmin comes with SCSS files, an organized codebase, gulp support for efficient workflow, rich documentation, and everything else that you can expect from a modern admin template.
 
-PlainAdmin is built with vanilla Javascript (no jQuery), Bootstrap 5 and the simplest possible way to make it easy to maintain and easy to port your back-end projects.
+PlainAdmin is built with vanilla Javascript (no jQuery), Bootstrap 5 and the simplest possible way to make it easy to maintain and easy to port your back-end products.
 
 ### [👉 Check out our Admin Template for Tailwind CSS](https://tailadmin.com)
 

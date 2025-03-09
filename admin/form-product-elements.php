@@ -54,39 +54,35 @@ include("../includes/connect.php");
 
     <!-- ========== form-elements-wrapper start ========== -->
     <div class="form-elements-wrapper">
-      <form action="../includes/project_add.inc.php" method="post" enctype="multipart/form-data">
+      <form action="../includes/product_add.inc.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-12">
           <!-- input style start -->
           <div class="card-style mb-30">
-            <h6 class="mb-25">Project</h6>
-            <div class="input-style-1">
-              <label>Project ID</label>
-              <input type="text" name="project_id" placeholder="Project ID" />
-            </div>
+            <h6 class="mb-25">Product</h6>
             <!-- end input -->
             <div class="input-style-2">
-              <label>Project Name</label>
-              <input type="text" name="project_name" placeholder="Project Name" />
+              <label>Product Name</label>
+              <input type="text" name="product_name" placeholder="product Name" />
             </div>
             <!-- end input -->
             <div class="input-style-3">
-              <label>Project Subscription</label>
-              <input type="text" name="project_subc" placeholder="Project Subscription" />
+              <label>Product Subscription</label>
+              <input type="text" name="product_subc" placeholder="product Subscription" />
             </div>
             <div class="input-style-1">
-              <label>Project Price</label>
-              <input type="number" name="project_price" placeholder="Project Price" />
+              <label>Product Price</label>
+              <input type="number" name="product_price" placeholder="product Price" />
             </div>
             <!-- end input -->
             <div class="input-style-2">
               <label>Warehouse Quantity</label>
-              <input type="text" name="project_quanity" placeholder="Warehouse Quantity" />
+              <input type="text" name="product_quanity" placeholder="Warehouse Quantity" />
             </div>
             <!-- end input -->
             <div class="input-style-3">
-              <label>Project Image</label>
-              <input type="file"name="hinhanh" placeholder="Project Image" />
+              <label>Product Image</label>
+              <input type="file"name="hinhanh" placeholder="product Image" />
             </div>
             <div class="select-style-1">
               <label>Category</label>

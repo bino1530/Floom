@@ -11,7 +11,7 @@ $sta = $conn->prepare($sql);
 $sta->execute();
 
 if ($sta->rowCount()) {
-  $projectlist = $sta->fetchAll(PDO::FETCH_OBJ);
+  $productlist = $sta->fetchAll(PDO::FETCH_OBJ);
 }
 
 ?>
@@ -24,7 +24,7 @@ if ($sta->rowCount()) {
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title">
-            <h2>Project List</h2>
+            <h2>Product List</h2>
           </div>
         </div>
         <!-- end col -->
@@ -59,13 +59,13 @@ if ($sta->rowCount()) {
                 <thead>
                   <tr>
                     <th class="lead-info">
-                      <h6>Project List ID</h6>
+                      <h6>Product List ID</h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Project List Name</h6>
+                      <h6>Product List Name</h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Project List Subcription </h6>
+                      <h6>Product List Subcription </h6>
                     </th>
                     <th class="lead-company">
                       <h6>Update</h6>
@@ -79,28 +79,28 @@ if ($sta->rowCount()) {
                 <tbody>
                   <?php
                   $i = 1;
-                  foreach ($projectlist as $projectlist) {
+                  foreach ($productlist as $productlist) {
                   ?>
                     <tr>
                     <tr>
                       <td class="min-width">
-                        <p><a href="#0"><?= $projectlist->MaDanhMuc?></a></p>
+                        <p><a href="#0"><?= $productlist->MaDanhMuc?></a></p>
                       </td>
                       <td class="min-width">
-                        <p><?= $projectlist-> TenDanhMuc?></p>
+                        <p><?= $productlist-> TenDanhMuc?></p>
                       </td>
                       <td class="min-width">
-                        <p><?= $projectlist->MoTaDM ?></p>
+                        <p><?= $productlist->MoTaDM ?></p>
                       </td>
                       <td>
                         <div class="action">
-                          <button class="text-success " onclick="window.open('form-projectlist-update.php?id=<?=$projectlist->MaDanhMuc?> ','_self')">
+                          <button class="text-success " onclick="window.open('form-productlist-update.php?id=<?=$productlist->MaDanhMuc?> ','_self')">
                             <i class="fa-solid fa-pen"></i> </button>
                         </div>
                       </td>
                       <td>
                         <div class="action">
-                          <button class="text-danger">
+                          <button class="text-danger" onclick="window.location.href='../includes/form-productlist-delete.inc.php?id=<?=$productlist -> MaDanhMuc?>'">
                             <i class="lni lni-trash-can"></i>
                           </button>
                         </div>

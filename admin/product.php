@@ -3,15 +3,14 @@ include("header.php");
 //B1 Kết nối CSDL
 include("../includes/connect.php");
 
-$sql = "Select * from tb_sanpham";
-$sql .= " order by SanPham_id ASC";
-
-
+$sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC";
 $sta = $conn->prepare($sql);
 $sta->execute();
 
-if ($sta->rowCount()) {
-  $project = $sta->fetchAll(PDO::FETCH_OBJ);
+$product = array(); // Khởi tạo biến $product để tránh lỗi undefined
+
+if ($sta->rowCount() > 0) {
+  $product = $sta->fetchAll(PDO::FETCH_OBJ);
 }
 
 ?>
@@ -24,7 +23,7 @@ if ($sta->rowCount()) {
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title">
-            <h2>Project</h2>
+            <h2>Product</h2>
           </div>
         </div>
         <!-- end col -->
@@ -62,16 +61,16 @@ if ($sta->rowCount()) {
                       <h6>Image</h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Project ID</h6>
+                      <h6>Product ID</h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Project Name</h6>
+                      <h6>Product Name</h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Project Price </h6>
+                      <h6>Product Price </h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Washouse Quantity</h6>
+                      <h6>Warehouse Quantity</h6>
                     </th>
                     <th class="lead-company">
                       <h6>Update</h6>
@@ -84,47 +83,48 @@ if ($sta->rowCount()) {
                 </thead>
                 <tbody>
                   <?php
-                  $i = 1;
-                  foreach ($project as $project) {
+                  if (!empty($product)) {
+                    foreach ($product as $product) {
                   ?>
-                    <tr>
                     <tr>
                       <td class="min-width">
                         <div class="lead">
                           <div class="lead-image">
-                            <img src="../asset/image/Valenties/<?=$project->HinhAnh?>" alt='Profile Picture'>
+                            <img src="../asset/image/Valenties/<?=$product->HinhAnh?>" alt='Profile Picture'>
                           </div>
                         </div>
                       </td>
-
                       <td class="min-width">
-                        <p><a href="#0"><?= $project->SanPham_id?></a></p>
+                        <p><a href="#0"><?= $product->SanPham_id?></a></p>
                       </td>
                       <td class="min-width">
-                        <p><?= $project->TenSanPham ?></p>
+                        <p><?= $product->TenSanPham ?></p>
                       </td>
                       <td class="min-width">
-                        <p><?= $project->Gia ?>$</p>
+                        <p><?= $product->Gia ?>$</p>
                       </td>
                       <td class="min-width">
-                        <p><?= $project->SLKho ?></p>
+                        <p><?= $product->SLKho ?></p>
                       </td>
                       <td>
                         <div class="action">
-                          <button class="text-success " onclick="window.open('form-project-update.php?id=<?=$project-> SanPham_id ?> ','_self')">
-                            <i class="fa-solid fa-pen"></i> </button>
+                          <button class="text-success" onclick="window.open('form-product-update.php?id=<?=$product->SanPham_id?>','_self')">
+                            <i class="fa-solid fa-pen"></i>
+                          </button>
                         </div>
                       </td>
                       <td>
                         <div class="action">
-                          <button class="text-danger">
+                          <button name="delete" onclick="window.location.href='../includes/form-product-delete.inc.php?id=<?=$product->SanPham_id?>'" class="text-danger">
                             <i class="lni lni-trash-can"></i>
                           </button>
                         </div>
                       </td>
                     </tr>
-                    <!-- end table row -->
                   <?php
+                    }
+                  } else {
+                    echo '<tr><td colspan="7">Không có sản phẩm nào trong danh sách.</td></tr>';
                   }
                   ?>
                 </tbody>
@@ -137,9 +137,6 @@ if ($sta->rowCount()) {
         <!-- end col -->
       </div>
       <!-- end row -->
-
-
-      <!-- ========== tables-wrapper end ========== -->
     </div>
     <!-- end container -->
 </section>

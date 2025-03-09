@@ -200,10 +200,10 @@ session_start();
             </a>
             <ul id="ddmenu_5" class="collapse dropdown-nav">
               <li>
-                <a href="form-projectlist-elements.php"> Project List Elements </a>
+                <a href="form-productlist-elements.php"> Product List Elements </a>
               </li>
               <li>
-                <a href="form-project-elements.php"> Project Elements </a>
+                <a href="form-product-elements.php"> Product Elements </a>
               </li>
             </ul>
           </li>
@@ -234,10 +234,10 @@ session_start();
                 <a href="user.php"> Users </a>
               </li>
               <li>
-                <a href="project.php"> Project </a>
+                <a href="product.php"> Product </a>
               </li>
               <li>
-                <a href="projectlist.php"> Project List </a>
+                <a href="productlist.php"> Product List </a>
               </li>
             </ul>
           </li>

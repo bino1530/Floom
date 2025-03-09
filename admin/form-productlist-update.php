@@ -1,8 +1,16 @@
 <?php
 include("header.php");
+if(isset($_GET['id'])){
+  $MaDanhMuc = $_GET['id'];
+  include("../includes/connect.php");
+  $sql = "SELECT * FROM tb_danhmuc WHERE MaDanhMuc = :MaDanhMuc";
+  $sta = $conn->prepare($sql);
+  $sta->bindParam(':MaDanhMuc', $MaDanhMuc, PDO::PARAM_INT);
+  $sta->execute();
+  if($sta->rowCount()){
+      $productlist = $sta->fetch(PDO::FETCH_OBJ);
+  }
 ?>
-
-
 <!-- ========== tab components start ========== -->
 <section class="tab-components">
   <div class="container-fluid">
@@ -11,7 +19,7 @@ include("header.php");
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title">
-            <h2>Project List Update</h2>
+            <h2>product List Update</h2>
           </div>
         </div>
         <!-- end col -->
@@ -24,7 +32,7 @@ include("header.php");
                 </li>
                 <li class="breadcrumb-item"><a href="#0">Forms</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  Project List
+                  product List
                 </li>
               </ol>
             </nav>
@@ -38,33 +46,36 @@ include("header.php");
 
     <!-- ========== form-elements-wrapper start ========== -->
     <div class="form-elements-wrapper">
-      <form action="../includes/projectlist_add.inc.php" method="post" enctype="multipart/form-data">
+      <form action="../includes/form-productlist-update.inc.php" method="post" enctype="multipart/form-data">
         <div class="row">
           <div class="col-lg-12">
             <!-- input style start -->
             <div class="card-style mb-30">
-              <h6 class="mb-25">Project</h6>
+              <h6 class="mb-25">Product List</h6>
               <div class="input-style-1">
-                <label>Project List ID</label>
-                <input type="text" name="project_id"   placeholder="Project List ID" />
+                <label>Product List ID</label>
+                <input type="text" name="product_id" value="<?=$productlist -> MaDanhMuc?>" placeholder="product ID" />
               </div>
               <!-- end input -->
               <div class="input-style-2">
-                <label>Project List Name</label>
-                <input type="text" name="project_name" placeholder="Project List Name" />
+                <label>Product List Name</label>
+                <input type="text" name="product_name" value="<?=$productlist -> TenDanhMuc?>" placeholder="product Name" />
               </div>
               <!-- end input -->
               <div class="input-style-3">
-                <label>Project List Subscription</label>
-                <input type="text" name="project_subc" placeholder="Project List Subscription" />
+                <label>Product List Subscription</label>
+                <input type="text" name="product_subc" value="<?=$productlist -> MoTaDM?>" placeholder="product Subscription" />
               </div>
               <!-- end input -->
               <div class="form-row">
+              <input type="hidden" name="product_id" value="<?= $productlist -> MaDanhMuc?>">
                 <button type="submit" name="submit" class="save-changes">Save Changes</button>
               </div>
             </div>
       </form>
-
+<?php
+}
+?>
       <!-- end card -->
 
     </div>

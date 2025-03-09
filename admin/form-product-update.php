@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
   $sta->bindParam(':SanPham_id', $Maloai, PDO::PARAM_INT);
   $sta->execute();
   if($sta->rowCount()){
-      $project = $sta->fetch(PDO::FETCH_OBJ);
+      $product = $sta->fetch(PDO::FETCH_OBJ);
   }
     $sql_lsp = "SELECT * from tb_danhmuc";
     $sql_sp = "SELECT * from tb_sanpham";
@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title">
-            <h2>Project Update</h2>
+            <h2>product Update</h2>
           </div>
         </div>
         <!-- end col -->
@@ -49,7 +49,7 @@ if(isset($_GET['id'])){
                 </li>
                 <li class="breadcrumb-item"><a href="#0">Forms</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  Form Elements
+                  Product Update
                 </li>
               </ol>
             </nav>
@@ -63,34 +63,34 @@ if(isset($_GET['id'])){
 
     <!-- ========== form-elements-wrapper start ========== -->
     <div class="form-elements-wrapper">
-      <form action="../includes/form-project-update.inc.php" method="post" enctype="multipart/form-data">
+      <form action="../includes/form-product-update.inc.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-lg-12">
           <!-- input style start -->
           <div class="card-style mb-30">
             <div class="input-style-2">
-              <label>Project Name</label>
-              <input type="text" name="project_name" value="<?=$project -> TenSanPham ?>" placeholder="Project Name" />
+              <label>Product Name</label>
+              <input type="text" name="product_name" value="<?=$product -> TenSanPham ?>" placeholder="product Name" />
             </div>
             <!-- end input -->
             <div class="input-style-3">
-              <label>Project Subscription</label>
-              <input type="text" name="project_subc" value="<?=$project -> MoTaSP ?>" placeholder="Project Subscription" />
+              <label>Product Subscription</label>
+              <input type="text" name="product_subc" value="<?=$product -> MoTaSP ?>" placeholder="product Subscription" />
             </div>
             <div class="input-style-1">
-              <label>Project Price</label>
-              <input type="number" name="project_price" value="<?=$project -> Gia ?>" placeholder="Project Price" />
+              <label>Product Price</label>
+              <input type="number" name="product_price" value="<?=$product -> Gia ?>" placeholder="product Price" />
             </div>
             <!-- end input -->
             <div class="input-style-2">
               <label>Warehouse Quantity</label>
-              <input type="text" name="project_quanity" value="<?=$project -> SLKho ?>" placeholder="Warehouse Quantity" />
+              <input type="text" name="product_quanity" value="<?=$product -> SLKho ?>" placeholder="Warehouse Quantity" />
             </div>
             <!-- end input -->
             <div class="input-style-3">
-              <label>Project Image</label>
-              <input type="file"name="hinhanh"  placeholder="Project Image" />
-              <input type="hidden"name="hinh" value="<?=$project -> HinhAnh ?>"  placeholder="Project Image" />
+              <label>Product Image</label>
+              <input type="file"name="hinhanh"  placeholder="product Image" />
+              <input type="hidden"name="hinh" value="<?=$product -> HinhAnh ?>"  placeholder="product Image" />
             </div>
             <div class="select-style-1">
               <label>Category</label>
@@ -108,7 +108,7 @@ if(isset($_GET['id'])){
              
             </div>
             <div class="form-row">
-                <input type="hidden" name="project_id" value="<?= $project -> SanPham_id?>">
+                <input type="hidden" name="product_id" value="<?= $product -> SanPham_id?>">
                 <button type="submit" name="submit" class="save-changes">Save Changes</button>
               </div>
             <!-- end select -->
