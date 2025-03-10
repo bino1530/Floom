@@ -1,0 +1,149 @@
+.username-account{
+    font-weight: 700;
+    color: var(--button_color);
+}
+.profile-page-row{
+    width: 100%;
+    margin-top: 150px;
+}
+
+.profile-page-col ul{
+    padding: 30px;
+}
+.profile-page-col li {
+    position: relative;
+    margin: 15px 0px;
+    border-bottom: 1px solid transparent; 
+    width: 80%;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-page-col li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--button_color); 
+    transition: width 0.3s ease-in-out;
+}
+
+.profile-page-col li:hover::before {
+    width: 100%; 
+}
+.profile-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-content i {
+    position: relative;
+}
+.profile-main{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.have-no-order{
+    width: 100%;
+}
+.have-no-order p{
+    margin: 0;
+    padding: 10px;
+    background-color: var(--button_color);
+    color: white;
+}
+.have-no-order p a{
+    border-bottom: 1px solid white;
+    color: white;
+}
+.address-row{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.address-col i{
+    font-size: 15px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--button); 
+}
+
+.save-changes {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--button_color); 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.save-changes:hover {
+    background-color: rgb(43, 43, 98); 
+}
+
+.password-section {
+    border: 2px solid var(--button); 
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.password-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--button);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #fdfdfd;
+    padding: 0 10px;
+    position: relative;
+    display: inline-block;
+    top: -10px;
+}
+
+.success-message{
+    font-weight: bold;
+    font-size: 15px;
+    color: green;
+}
+
+.profile-image {
+    width:30px; 
+    height:30px; 
+    border-radius:50%;
+}

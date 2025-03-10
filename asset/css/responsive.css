@@ -1,0 +1,731 @@
+@keyframes ani{
+    0%{
+        color: var(--button_color);
+    }
+    50%{
+        color: darkgreen;
+    }
+
+    100%{
+        color: darkblue;
+    }
+}
+
+
+@media (max-width:1024px) {
+    header{
+        margin-top: 0px;
+    }
+    .announcement_header{
+        display: none;
+        margin: 0;
+    }
+    .navigation{
+        width: 100%;
+    }
+    .fa-bars {
+        display: block;
+    }
+    .nav-off{
+        display: none;
+    }
+    .sidebar {
+        display: block; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 300px;
+        z-index: 999;
+        background-color: white;
+        box-shadow: 1px 0 8px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        padding: 20px;
+        list-style: none;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .sidebar .dropdown-content{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .sidebar .dropdown-topic{
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding: 10px;
+
+    }
+    .sidebar .fa-xmark{
+        display: flex;
+        justify-content: right;
+    }
+    .logo img{
+        width: 30%;
+        cursor: pointer;
+        
+    }
+    .bg-pink{
+        background-color: var(--bg_pink);
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+        
+    }
+    .best-seller-col{
+        width: 330px;
+        margin-top: 50px;
+    }
+    
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .bg-pink{
+        background-color: var(--bg_pink);
+        height: auto;
+        margin-top: 50px;
+        width: 100%;
+    }
+    .floom-row{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+        padding: 0px;
+    }
+    .floom-info{
+        padding: 30px;
+    }
+    .floom-ads img{
+        width: 100%;    
+    
+    }
+    .floom-info-zip{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 50px;
+        padding: 10px 15px;
+        gap: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .floom-info-zip input[type='text'],
+    .floom-info-zip select{
+    width: 250px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
+    margin-top: 10px;
+    }
+
+    .floom-info-topic h1{
+        font-size: 32px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 30px;
+    }
+
+    .Monthly_Flowers{
+        margin-top: 50px;
+    }
+
+
+   .Monthly_Flowers h1{
+        font-weight: bold;
+        font-size: 23px;
+    }
+   .Monthly_Flowers p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+   .Monthly_Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(-10%, -50%);
+        width: 300px;
+    }
+
+    .starts-subscription{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+    
+    .Flowers-Delivery{
+        margin-top: 50px;
+    }
+
+    .Flowers-Delivery h1{
+        font-weight: bold;
+        font-size: 23px;
+    }
+    .Flowers-Delivery p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .Flowers-Delivery-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(10%, -50%);
+        width: 300px;
+    }
+    
+    .Order-Same-Day{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        left: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+    
+    .Birthday-Flowers{
+        margin-top: 50px;
+    }
+
+
+   .Birthday-Flowers h1{
+        font-weight: bold;
+        font-size: 23px;
+    }
+   .Birthday-Flowers p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+   .Birthday-Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(-10%, -50%);
+        width: 300px;
+    }
+
+    .Shop-Birthday{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Visit-My-Flowers{
+        margin-top: 50px;
+    }
+
+    .Visit-My-Flowers h1{
+        font-weight: bold;
+        font-size: 23px;
+    }
+    .Visit-My-Flowers p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .Visit-My-Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(10%, -50%);
+        width: 300px;
+    }
+    
+    .Shop-Now{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        left: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    
+
+}
+
+
+@media (max-width: 767px) {
+    .navigation .fix{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .floom-row{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+        padding: 0px;
+    }
+    .floom-info{
+        padding: 30px;
+    }
+    .floom-info-zip{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 50px;
+        padding: 10px 15px;
+        gap: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .floom-info-zip input[type='text'],
+    .floom-info-zip select{
+    width: 250px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
+    margin-top: 10px;
+    }
+
+    .floom-info-topic h1{
+        font-size: 32px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 30px;
+    }
+    .Monthly_Flowers{
+        margin-top: 70px;
+    }
+
+    .Monthly_Flowers h1{
+        font-weight: bold;
+        font-size: 19px;
+    }
+    .Monthly_Flowers-info p{
+        text-align: right;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .Monthly_Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(-10%, -50%);
+        width: 250px;
+        padding: 20px;
+    }
+
+    .starts-subscription{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 8px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    
+    }
+
+    .Flowers-Delivery{
+        margin-top: 50px;
+    }
+
+   .Flowers-Delivery h1{
+        font-weight: bold;
+        font-size: 17px;
+    }
+   .Flowers-Delivery-info p{
+        text-align: left;
+        font-weight: bold;
+        font-size: 14px;
+    }
+   .Flowers-Delivery-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(10%, -50%);
+        width: 250px;
+        padding: 20px;
+
+    }
+
+    
+    
+
+    .Order-Same-Day{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 8px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        left: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Birthday-Flowers{
+        margin-top: 70px;
+    }
+
+    .Birthday-Flowers h1{
+        font-weight: bold;
+        font-size: 19px;
+    }
+    .Birthday-Flowers-info p{
+        text-align: right;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .Birthday-Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(-10%, -50%);
+        width: 250px;
+        padding: 20px;
+
+    }
+
+    .Shop-Birthday{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 8px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Visit-My-Flowers{
+        margin-top: 50px;
+    }
+
+   .Visit-My-Flowers h1{
+        font-weight: bold;
+        font-size: 17px;
+    }
+   .Visit-My-Flowers-info p{
+        text-align: left;
+        font-weight: bold;
+        font-size: 14px;
+    }
+   .Visit-My-Flowers-info{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        bottom: 50%;
+        transform: translate(10%, -50%);
+        width: 250px;
+        padding: 20px;
+
+    }
+
+    .Shop-Now{
+        display: inline-block;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 8px;
+        color: white;
+        position: absolute;
+        margin-top: 10px;
+        left: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+    .logo-image img{
+        width: 20%;
+    }
+    .login .username{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+      }
+      .login .username img{
+        width: 50%;
+        cursor: pointer;
+      }
+    
+}
+
+@media (max-width: 567px) {
+
+    .banner-of-store{
+        background-color: rgb(238, 238, 238);
+    }
+
+    .Monthly_Flowers{
+        position: relative;
+        padding: 20px;
+    }
+    .Monthly_Flowers-image{
+        content: url(../image/index/Monthly-Flowers-respons.jpg);
+        width: 100%;
+    }
+    .Monthly_Flowers-image img{
+        width: 100%;
+
+    }
+    .Monthly_Flowers h1{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+    .Monthly_Flowers-info p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        
+    }
+    .Monthly_Flowers-info{
+        position: relative;
+        margin-top: 140px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 10%;
+        padding: 10px;
+    }
+    .starts-subscription{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px 15px;
+        color: white;
+        position: unset;
+        margin-top: 0px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Flowers-Delivery{
+        position: relative;
+        padding: 20px;
+
+    }
+    .Flowers-Delivery-image{
+        content: url(../image/index/Flowers-Deliver-repons.jpg);
+        width: 100%;
+    }
+    .Flowers-Delivery-image img{
+        width: 100%;
+
+    }
+    .Flowers-Delivery h1{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+    .Flowers-Delivery-info p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        
+    }
+    .Flowers-Delivery-info{
+        position: relative;
+        margin-top: 140px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: -10%;
+        padding: 10px;
+    }
+    .Order-Same-Day{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px 15px;
+        color: white;
+        position: unset;
+        margin-top: 0px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Birthday-Flowers{
+        position: relative;
+        padding: 20px;
+
+    }
+    .Birthday-Flowers-image{
+        content: url(../image/index/Flowers-Birthday-respons.jpg);
+        width: 100%;
+    }
+    .Birthday-Flowers-image img{
+        width: 100%;
+
+    }
+    .Birthday-Flowers h1{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+    .Birthday-Flowers-info p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        
+    }
+    .Birthday-Flowers-info{
+        position: relative;
+        margin-top: 140px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 10%;
+        padding: 10px;
+    }
+    .Shop-Birthday{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px 15px;
+        color: white;
+        position: unset;
+        margin-top: 0px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Visit-My-Flowers{
+        position: relative;
+        padding: 20px;
+
+    }
+    .Visit-My-Flowers-image{
+        content: url(../image/index/Flowers-Visit-respons.jpg);
+        width: 100%;
+    }
+    .Visit-My-Flowers-image img{
+        width: 100%;
+
+    }
+    .Visit-My-Flowers h1{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+    .Visit-My-Flowers-info p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        
+    }
+    .Visit-My-Flowers-info{
+        position: relative;
+        margin-top: 140px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: -10%;
+        padding: 10px;
+    }
+    .Shop-Now{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--button_color);
+        padding: 10px 15px;
+        color: white;
+        position: unset;
+        margin-top: 0px;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out , background-color 0.3s ease;
+    }
+
+    .Media-row {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 50px;
+      }
+      .media-2-source{
+        margin-top: 0px;
+      }
+      .media-position{
+        margin-top: 20px;
+      }
+
+      .footer-col p{
+        text-align: center;
+        margin-top: 15px;
+      }
+
+    .address-col h4,h5{
+        font-size: 14px;
+    }
+    .logo-image img{
+        width: 20%;
+    }
+    .login .username{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+      }
+      .login .username img{
+        width: 50%;
+        cursor: pointer;
+      }
+}

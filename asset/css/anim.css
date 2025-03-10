@@ -1,0 +1,64 @@
+.view-left {
+  animation: appear linear;
+  animation-duration: 2s;
+  opacity: 0; 
+  visibility: hidden; 
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+.view-right {
+  animation: appear-right linear;
+  animation-duration: 2s;
+  opacity: 0; 
+  visibility: hidden; 
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+.view-show {
+  animation: appear-show linear;
+  animation-duration: 2s;
+  opacity: 0; 
+  visibility: hidden; 
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+.appear {
+  animation-fill-mode: forwards; 
+  visibility: visible; 
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }to{
+    opacity: 1;
+    transform: translateX(0);
+
+  }
+}
+
+@keyframes appear-right{
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }to{
+    opacity: 1;
+    transform: translateX(0);
+
+  }
+}
+
+@keyframes appear-show{
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
