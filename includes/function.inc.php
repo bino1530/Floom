@@ -83,7 +83,7 @@ function loginUser($conn, $newUsername, $pwd) {
     $uidExists = uidExists($conn, $newUsername, $newUsername);
 
     if ($uidExists === false) {
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../page/login.php?error=wronglogin");
         exit();
     }
 
@@ -91,7 +91,7 @@ function loginUser($conn, $newUsername, $pwd) {
     $role = $uidExists["Role"];
 
     if ($pwd !== $storedPwd) {
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../page/login.php?error=wronglogin");
         exit();
     } else {
         session_start();

@@ -70,7 +70,13 @@ if ($sta->rowCount() > 0) {
                       <h6>Product Price </h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Warehouse Quantity</h6>
+                      <h6>Quantity</h6>
+                    </th>
+                    <th class="lead-info">
+                      <h6>Creator</h6>
+                    </th>
+                    <th class="lead-info">
+                      <h6>Date</h6>
                     </th>
                     <th class="lead-company">
                       <h6>Update</h6>
@@ -106,6 +112,12 @@ if ($sta->rowCount() > 0) {
                       </td>
                       <td class="min-width">
                         <p><?= $product->SLKho ?></p>
+                      </td>
+                      <td class="min-width">
+                        <p><?= $product->NguoiTao ?></p>
+                      </td>
+                      <td class="min-width">
+                        <p><?= $product->NgayTao ?></p>
                       </td>
                       <td>
                         <div class="action">

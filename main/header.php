@@ -12,7 +12,7 @@ if (isset($_SESSION["username"])) {
     if ($user && !empty($user["HinhAnh"])) {
         $profilePic = "data:image/jpeg;base64," . base64_encode($user["HinhAnh"]);
     } else {
-        $profilePic = "../asset/image/index/smile.png"; 
+        $profilePic = "asset/image/index/smile.png"; 
     }
 }?>
 <!DOCTYPE html>
@@ -83,15 +83,15 @@ if (isset($_SESSION["username"])) {
                 </div>
                 <div class="dropdown-column">
                   <h4>Perfect plants</h4>
+                  <a href="#">Same-Day</a>
                   <a href="#">Indoor Plants</a>
                   <a href="#">Monstera</a>
                   <a href="#">Cactus</a>
                 </div>
               </div>
             </li>
-            <li><a class="nav-off" href="">Same-Day</a></li>
             <li><a class="nav-off" href="">Subscription</a></li>
-            <li><a class="nav-off" href="">Roses</a></li>
+            <li><a class="nav-off" href="">About Us</a></li>
           </ul>
         </div>
         <div class="logo">
