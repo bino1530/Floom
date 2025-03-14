@@ -2,7 +2,9 @@
 include ("../main/header1.php");
 include("../includes/connect.php");
 
-// Lấy danh sách danh mục
+// Lấy giá trị Ma_DanhMuc từ URL, mặc định là 'all' nếu không được thiết lập
+$category_id = isset($_GET['Category_ID']) ? $_GET['Category_ID'] : 'all';
+
 $sql = "SELECT * FROM tb_danhmuc ORDER BY MaDanhMuc ASC";
 $sta = $conn->prepare($sql);
 $sta->execute();
@@ -11,10 +13,15 @@ $productlist = array();
 if ($sta->rowCount() > 0) {
   $productlist = $sta->fetchAll(PDO::FETCH_OBJ);
 }
-
-// Lấy danh sách sản phẩm
-$sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC";
+if ($category_id === 'all') {
+  $sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC";
+} else {
+  $sql = "SELECT * FROM tb_sanpham WHERE Ma_DanhMuc = :Ma_DanhMuc ORDER BY SanPham_id ASC";
+}
 $sta = $conn->prepare($sql);
+if ($category_id !== 'all') {
+  $sta->bindParam(':Ma_DanhMuc', $category_id, PDO::PARAM_STR);
+}
 $sta->execute();
 
 $product = array();
@@ -26,12 +33,11 @@ if ($sta->rowCount() > 0) {
     <div class="scroll-list-layout">
         <div class="scroll-list">
             <div class="button-choose">
-                <a href="">All</a>
+                <a href="shop_product.php">All</a>
                 <?php
-                  $i = 1;
                   foreach ($productlist as $pdlist) {
                 ?>
-                <a href=""><?=$pdlist -> TenDanhMuc?></a>
+                <a href="?Category_ID=<?= $pdlist->MaDanhMuc ?>"><?= $pdlist->TenDanhMuc ?></a>                
                 <?php
                     }
                 ?>
@@ -54,10 +60,9 @@ if ($sta->rowCount() > 0) {
                     <div class="product-sort-row row">
                         <p class="flip-sort dropdown-status">Popular</p>
                         <?php
-                            $i = 1;
                             foreach($productlist as $pdlist){
                         ?>
-                        <p class="panel-sort"><input type="checkbox" name="" id=""> <?=$pdlist -> TenDanhMuc?></p>
+                        <p class="panel-sort"><input type="checkbox" name="" id=""> <?=$pdlist->TenDanhMuc?></p>
                         <?php
                             }
                         ?>
@@ -95,11 +100,11 @@ if ($sta->rowCount() > 0) {
                             <img src="<?= $profilePic?>" alt="">
                         </div>
                         <div class="product-info">
-                            <p class="product-name"><?=$pd -> TenSanPham?></p>
+                            <p class="product-name"><?=$pd->TenSanPham?></p>
                             <p class="subcribe">Subscribe for 30% off</p>
                         </div>
                         <div class="product-price">
-                            <p class="product-price1">From <strong><?=$pd -> Gia?>$</strong></p>
+                            <p class="product-price1">From <strong><?=$pd->Gia?>$</strong></p>
                             <a href="">Buy Now</a>
                         </div>
                     </div>
@@ -110,7 +115,6 @@ if ($sta->rowCount() > 0) {
             </div>
         </div>
     </div>
-
 </main>
 <?php
 include ("../main/footer.php")

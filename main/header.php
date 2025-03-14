@@ -65,11 +65,11 @@ if (isset($_SESSION["username"])) {
               <i class="fa-solid fa-bars bars" onclick="showSidebar()"></i>
             </li>
             <li class="dropdown-btn">
-              <a class="nav-off" href="#" onclick="toggleShopDropdown()">Shop</a>
+              <a class="nav-off" href="" onclick="toggleShopDropdown()">Shop</a>
               <div id="shop-dropdown" class="dropdown-menu">
                 <div class="dropdown-column">
                   <h4>Shop All</h4>
-                  <a href="#">All</a>
+                  <a href="page/shop_product.php">All</a>
                   <a href="#">Valentine</a>
                   <a href="#">Flowers</a>
                   <a href="#">Gifts</a>
