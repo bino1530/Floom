@@ -105,15 +105,15 @@ if (isset($_SESSION["username"])) {
         <?php
           if (isset($_SESSION["username"])) {
             if (isset($_SESSION["role"]) && $_SESSION["role"] === 'Admin') {
-                echo "<a href='admin/index.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
+                echo "<a href='../admin/index.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
               } else {
                 
-                echo "<a href='page/profile.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
+                echo "<a href='../page/profile.php' class='username'>". $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
                 echo "<a href=''><i class='fa-solid fa-bag-shopping fa-lg'></i></a> ";
             
               }
         } else {
-            echo "<a href='page/login.php'><i class='fa-solid fa-user fa-lg'></i></a>";
+            echo "<a href='../page/login.php'><i class='fa-solid fa-user fa-lg'></i></a>";
             echo "<a href=''><i class='fa-solid fa-bag-shopping fa-lg'></i></a> ";
         }
           ?>

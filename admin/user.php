@@ -105,7 +105,7 @@ if ($sta->rowCount()) {
                       </td>
 
                       <td class="min-width">
-                        <p><a href="#0"><?= $us->User_id ?></a></p>
+                        <p><a href="#0"><?=$i ?></a></p>
                       </td>
                       <td class="min-width">
                         <p><?= $us->Username ?></p>
@@ -120,13 +120,14 @@ if ($sta->rowCount()) {
                       <td>
                         <div class="action">
                           <button class="text-danger">
-                            <i class="lni lni-trash-can"></i>
+                            <i onclick="window.location.href='../includes/form-user-delete.inc.php?id=<?=$us->User_id?>'" class="lni lni-trash-can"></i>
                           </button>
                         </div>
                       </td>
                     </tr>
                     <!-- end table row -->
                   <?php
+                  $i++;
                   }
                   ?>
                 </tbody>

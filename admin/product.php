@@ -90,6 +90,7 @@ if ($sta->rowCount() > 0) {
                 <tbody>
                   <?php
                   if (!empty($product)) {
+                    $i = 1;
                     foreach ($product as $product) {
                     $profilePic = "data:image/jpeg;base64," . $product->HinhAnh;
                   ?>
@@ -102,7 +103,7 @@ if ($sta->rowCount() > 0) {
                         </div>
                       </td>
                       <td class="min-width">
-                        <p><a href="#0"><?= $product->SanPham_id?></a></p>
+                        <p><a href="#0"><?=$i?></a></p>
                       </td>
                       <td class="min-width">
                         <p><?= $product->TenSanPham ?></p>
@@ -135,6 +136,7 @@ if ($sta->rowCount() > 0) {
                       </td>
                     </tr>
                   <?php
+                    $i++;
                     }
                   } else {
                     echo '<tr><td colspan="7">Không có sản phẩm nào trong danh sách.</td></tr>';
