@@ -82,7 +82,7 @@ include("../includes/connect.php");
             <!-- end input -->
             <div class="input-style-3">
               <label>Product Image</label>
-              <input type="file" name="hinhanh" placeholder="product Image" />
+              <input type="file" name="hinhanh[]" multiple/>
             </div>
             <div class="select-style-1">
               <label>Category</label>

@@ -80,6 +80,13 @@
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
+    .navigation .fix{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 0;
+    }
     .bg-pink{
         background-color: var(--bg_pink);
         height: auto;
@@ -270,13 +277,37 @@
         cursor: pointer;
         transition: transform 0.3s ease-in-out , background-color 0.3s ease;
     }
+    .product-sort{
+        display: none !important;
+    }
+    .filterbutton{
+        display: block !important; 
 
-    
-
+    }
+    .custom-sidebar{
+        display: block;
+    }
+    .login .username{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        margin-right: 20px;
+      }
 }
 
 
 @media (max-width: 767px) {
+    .product-sort{
+        display: none !important;
+    }
+    .filterbutton{
+        display: block !important; 
+
+    }
+    .custom-sidebar{
+        display: block;
+    }
     .navigation .fix{
         display: flex;
         justify-content: left;
@@ -483,16 +514,22 @@
         justify-content: center;
         align-items: center;
         width: 40%;
+        margin-right: 20px;
       }
       .login .username img{
         width: 50%;
         cursor: pointer;
       }
-    
+      .product-main-row{
+        margin-left: 0px;
+    }
 }
 
 @media (max-width: 567px) {
-
+    .product-main-row{
+        margin: 0px 0px 0px 0px !important;
+        padding: 0px 20px !important;
+    }
     .banner-of-store{
         background-color: rgb(238, 238, 238);
     }

@@ -20,3 +20,15 @@ function toggleShopDropdown() {
 function toggleShopDropdownSidebar() {
     $('#shop-dropdown-sidebar').toggle();
 }
+
+$(document).ready(function () {
+    $(".filterbutton").on("click", function () {
+        $(".custom-sidebar").addClass("active"); 
+        $("#overlay").fadeIn(); 
+    });
+
+    $("#overlay").on("click", function () {
+        $(".custom-sidebar").removeClass("active"); 
+        $(this).fadeOut();
+    });
+});

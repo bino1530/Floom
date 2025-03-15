@@ -12,7 +12,6 @@ $product = array(); // Khởi tạo biến $product để tránh lỗi undefined
 if ($sta->rowCount() > 0) {
   $product = $sta->fetchAll(PDO::FETCH_OBJ);
 }
-
 ?>
 
 <!-- ========== table components start ========== -->
@@ -53,7 +52,6 @@ if ($sta->rowCount() > 0) {
         <div class="col-lg-12">
           <div class="card-style mb-30">
             <div class="table-wrapper table-responsive">
-              
               <table class="table">
                 <thead>
                   <tr>
@@ -92,7 +90,8 @@ if ($sta->rowCount() > 0) {
                   if (!empty($product)) {
                     $i = 1;
                     foreach ($product as $product) {
-                    $profilePic = "data:image/jpeg;base64," . $product->HinhAnh;
+                      $imagesArray = json_decode($product->HinhAnh, true);
+                      $profilePic = "data:image/jpeg;base64," . $imagesArray[0]; 
                   ?>
                     <tr>
                       <td class="min-width">
@@ -136,7 +135,7 @@ if ($sta->rowCount() > 0) {
                       </td>
                     </tr>
                   <?php
-                    $i++;
+                      $i++;
                     }
                   } else {
                     echo '<tr><td colspan="7">Không có sản phẩm nào trong danh sách.</td></tr>';

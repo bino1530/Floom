@@ -34,6 +34,9 @@ main .scroll-list{
 .product-layout-row{
     margin: 0px;
 
+}.product-layout-col{
+    margin: 0px;
+    padding: 0px;
 }
 .product-sort-row{
     border-bottom: 1px solid gray;
@@ -163,4 +166,83 @@ main .scroll-list{
     border: 1px solid var(--button_color);
     border-radius: 5px;
     text-decoration: none;
+}
+.product-sort1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none; 
+    margin: 0px 20px;
+    width: 100%;  
+    max-height: 500px; 
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.custom-sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1000vh; 
+    width: 300px; 
+    z-index: 9999;
+    background-color: #f9f9f9;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-sidebar.active {
+    transform: translateX(0); 
+}
+
+.filter {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filterbutton{
+    display: none;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--button_color);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid var(--button_color);
+    width: 50%;
+    margin-top: 20px;
+    transition: transform 0.3s, color 0.3s , background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.filterbutton:hover{
+    background-color: var(--button_color);
+    color: white;
 }
