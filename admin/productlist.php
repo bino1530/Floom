@@ -95,7 +95,7 @@ if ($sta->rowCount()) {
                       <td>
                         <div class="action">
                           <button class="text-success " onclick="window.open('form-productlist-update.php?id=<?=$productlist->MaDanhMuc?> ','_self')">
-                            <i class="fa-solid fa-pen"></i> </button>
+                          <i class="fa-solid fa-pen"></i> </button>
                         </div>
                       </td>
                       <td>

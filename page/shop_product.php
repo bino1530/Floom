@@ -2,7 +2,7 @@
 include("../main/header1.php");
 include("../includes/connect.php");
 
-// Lấy giá trị Ma_DanhMuc từ URL, mặc định là 'all' nếu không được thiết lập
+// lấy giá trị Ma_DanhMuc từ url, mặc định là all nếu không được thiết lập
 $category_id = isset($_GET['Category_ID']) ? $_GET['Category_ID'] : 'all';
 $sql = "SELECT * FROM tb_danhmuc ORDER BY MaDanhMuc ASC";
 $sta = $conn->prepare($sql);
@@ -11,8 +11,8 @@ $productlist = array();
 if ($sta->rowCount() > 0) {
     $productlist = $sta->fetchAll(PDO::FETCH_OBJ);
 }
-// Bắt đầu đếm số trang
-$sp_trang = 5;
+// bắt đầu đếm số trang
+$sp_trang = 9;
 if ($category_id === 'all') {
     $sql_count = "SELECT COUNT(*) FROM tb_sanpham";
 } else {
@@ -27,7 +27,6 @@ $tong_sp = $sta_count->fetchColumn();
 $tong_trang = ceil($tong_sp / $sp_trang);
 $trang_ht = min($tong_trang, max(1, isset($_GET['page']) ? $_GET['page'] : 1));
 $vtbd = ($trang_ht - 1) * $sp_trang;
-//Xử lý tổng sp và xử lý tổng sp khi mình chọn danh mục khác 
 if ($category_id === 'all') {
     $sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC LIMIT " . $vtbd . ", " . $sp_trang;
 } else {
@@ -48,14 +47,12 @@ if ($sta->rowCount() > 0) {
         <div class="scroll-list-layout">
             <div class="scroll-list">
                 <div class="button-choose">
-                    <a href="shop_product.php">All</a>
-                    <?php
-                    foreach ($productlist as $pdlist) {
-                    ?>
-                        <a href="?Category_ID=<?= $pdlist->MaDanhMuc ?>"><?= $pdlist->TenDanhMuc ?></a>
-                    <?php
-                    }
-                    ?>
+                    <a href="shop_product.php" class="<?= !isset($_GET['Category_ID']) ? 'active' : '' ?>">All</a>
+                    <?php foreach ($productlist as $pdlist): ?>
+                        <a href="?Category_ID=<?= $pdlist->MaDanhMuc ?>" class="<?= isset($_GET['Category_ID']) && $_GET['Category_ID'] == $pdlist->MaDanhMuc ? 'active' : '' ?>">
+                            <?= $pdlist->TenDanhMuc ?>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -100,67 +97,68 @@ if ($sta->rowCount() > 0) {
                         </div>
                     </div>
                 </div>
-                <span class="filterbutton" onclick="toggleSidebar()">Sort/Filter</span>               
+                <span class="filterbutton" onclick="toggleSidebar()">Sort/Filter</span>
                 <div class="custom-sidebar">
-                <span class="filter">Sort/Filter</span>                    
-                <div class="sidebar-content">
-                    <div class="product-layout-col col-lg-2 col-sm-12 col-12">
-                        <div class="product-sort1">
-                            <div class="product-sort-row row">
-                                <p class="flip-sort dropdown-status">Price</p>
-                                <p class="panel-sort"><input type="checkbox" name="" id="">
-                                    < 20$</p>
-                                        <p class="panel-sort"><input type="checkbox" name="" id=""> 20$ - 50$</p>
-                                        <p class="panel-sort"><input type="checkbox" name="" id=""> 50$ - 100$</p>
-                                        <p class="panel-sort"><input type="checkbox" name="" id=""> 100$ - 200$</p>
-                                        <p class="panel-sort"><input type="checkbox" name="" id=""> > 200$</p>
-                            </div>
-                            <div class="product-sort-row row">
-                                <p class="flip-sort dropdown-status">Popular</p>
-                                <?php
-                                foreach ($productlist as $pdlist) {
-                                ?>
-                                    <p class="panel-sort"><input type="checkbox" name="" id=""> <?= $pdlist->TenDanhMuc ?></p>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <div class="product-sort-row row">
-                                <p class="flip-sort dropdown-status"> Pet Friendly</p>
-                                <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
-                            </div>
-                            <div class="product-sort-row row">
-                                <p class="flip-sort dropdown-status"> Air Cleaner </p>
-                                <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
-                            </div>
-                            <div class="product-sort-row row">
-                                <p class="flip-sort dropdown-status"> Add on</p>
-                                <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
+                    <span class="filter">Sort/Filter</span>
+                    <div class="sidebar-content">
+                        <div class="product-layout-col col-lg-2 col-sm-12 col-12">
+                            <div class="product-sort1">
+                                <div class="product-sort-row row">
+                                    <p class="flip-sort dropdown-status">Price</p>
+                                    <p class="panel-sort"><input type="checkbox" name="" id="">
+                                        < 20$</p>
+                                            <p class="panel-sort"><input type="checkbox" name="" id=""> 20$ - 50$</p>
+                                            <p class="panel-sort"><input type="checkbox" name="" id=""> 50$ - 100$</p>
+                                            <p class="panel-sort"><input type="checkbox" name="" id=""> 100$ - 200$</p>
+                                            <p class="panel-sort"><input type="checkbox" name="" id=""> > 200$</p>
+                                </div>
+                                <div class="product-sort-row row">
+                                    <p class="flip-sort dropdown-status">Popular</p>
+                                    <?php
+                                    foreach ($productlist as $pdlist) {
+                                    ?>
+                                        <p class="panel-sort"><input type="checkbox" name="" id=""> <?= $pdlist->TenDanhMuc ?></p>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <div class="product-sort-row row">
+                                    <p class="flip-sort dropdown-status"> Pet Friendly</p>
+                                    <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
+                                </div>
+                                <div class="product-sort-row row">
+                                    <p class="flip-sort dropdown-status"> Air Cleaner </p>
+                                    <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
+                                </div>
+                                <div class="product-sort-row row">
+                                    <p class="flip-sort dropdown-status"> Add on</p>
+                                    <p class="panel-sort"><input type="checkbox" name="" id=""> Yes</p>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div>
                 </div>
-                
+
                 <div class="product-layout-col col-lg-10 col-sm-12 col-12">
-                    <div class="product-main-row row">
+                    <div class="product-main-row row g-4">
                         <?php
                         foreach ($product as $pd) {
                             $imagesArray = json_decode($pd->HinhAnh, true);
-                            $profilePic = "data:image/jpeg;base64," . $imagesArray[0];                         
+                            $profilePic = "data:image/jpeg;base64," . $imagesArray[0];
                         ?>
                             <div class="product-main-col col-lg-4 col-sm-6 col-12">
                                 <div class="product-image">
-                                    <img src="<?= $profilePic ?>" alt="">
+                                    <img src="<?= $profilePic ?>" onclick="window.open('shop_product_main.php?id=<?=$pd->SanPham_id?> ','_self')" alt="">
                                 </div>
                                 <div class="product-info">
                                     <p class="product-name"><?= $pd->TenSanPham ?></p>
-                                    <p class="subcribe">Subscribe for 30% off</p>
-                                </div>
-                                <div class="product-price">
                                     <p class="product-price1">From <strong><?= $pd->Gia ?>$</strong></p>
-                                    <a href="">Buy Now</a>
+                                </div>
+                                <hr>
+                                <div class="product-price">
+                                <p class="subcribe">Subscribe for 30% off</p>
+                                <p class="product-price1">From <strong><?= round($pd->Gia * 0.7, 2) ?>$</strong></p>
                                 </div>
                             </div>
                         <?php

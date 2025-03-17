@@ -62,6 +62,12 @@ span,
 a {
   display: inline-block;
 }
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
 
 audio,
 canvas,

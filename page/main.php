@@ -43,68 +43,41 @@
           </p>
         </div>
       </div>
-
+      <?php
+      include("includes/connect.php");
+      $sql = "SELECT * FROM tb_sanpham WHERE Ma_DanhMuc = 'BS_01' LIMIT 4";
+      $sta = $conn->prepare($sql);
+      $sta->execute();
+      $product = $sta->fetchAll(PDO::FETCH_OBJ);
+      ?>
       <div class="best-seller-container">
-        <h1>Best-Selling Floom</h1>
+        <h1>Best-Selling</h1>
         <div class="best-seller-row row">
-          <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
-            <div class="best-seller-image new">
-              <img
-                src="asset/image/index/Strawnberry_Shortcake.avif"
-                alt="" />
-            </div>
-            <div class="best-seller-info">
-              <p><strong>Strawnberry Shortcake</strong></p>
-              <p>from <strong>$59</strong></p>
-            </div>
-            <hr />
-            <div class="best-seller-sales-off">
-              <span class="text-blue">Subscribe for 30% off</span>
-              <span class="text-blue">from $42</span>
-            </div>
-          </div>
-          <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
-            <div class="best-seller-image">
-              <img src="asset/image/index/Always.avif" alt="" />
-            </div>
-            <div class="best-seller-info">
-              <p><strong>Always</strong></p>
-              <p>from <strong>$64</strong></p>
-            </div>
-            <hr />
-            <div class="best-seller-sales-off">
-              <span class="text-blue">Subscribe for 30% off</span>
-              <span class="text-blue">from $45</span>
-            </div>
-          </div>
-          <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
-            <div class="best-seller-image">
-              <img src="asset/image/index/Picnic.avif" alt="" />
-            </div>
-            <div class="best-seller-info">
-              <p><strong>Picnic</strong></p>
-              <p>from <strong>$59</strong></p>
-            </div>
-            <hr />
-            <div class="best-seller-sales-off">
-              <span class="text-blue">Subscribe for 30% off</span>
-              <span class="text-blue">from $42</span>
-            </div>
-          </div>
-          <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
-            <div class="best-seller-image">
-              <img src="asset/image/index/Wild_About_U.avif" alt="" />
-            </div>
-            <div class="best-seller-info">
-              <p><strong>Wild About U</strong></p>
-              <p>from <strong>$54</strong></p>
-            </div>
-            <hr />
-            <div class="best-seller-sales-off">
-              <span class="text-blue">Subscribe for 30% off</span>
-              <span class="text-blue">from $42</span>
-            </div>
-          </div>
+          <?php
+          if (!empty($product)) {
+            $i = 1;
+            foreach ($product as $product) {
+              $imagesArray = json_decode($product->HinhAnh, true);
+              $profilePic = "data:image/jpeg;base64," . $imagesArray[0];
+          ?>
+              <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
+                <div class="best-seller-image new">
+                  <img src="<?= $profilePic ?>" alt="" />
+                </div>
+                <div class="best-seller-info">
+                  <p><strong><?= $product->TenSanPham ?></strong></p>
+                  <p>from <strong><?= $product->Gia?>$</strong></p>
+                </div>
+                <hr />
+                <div class="best-seller-sales-off">
+                  <span class="text-blue">Subscribe for 30% off</span>
+                  <span class="text-blue">from <?= round($product->Gia * 0.7, 2) ?></span>
+                </div>
+              </div>
+          <?php
+            }
+          }
+          ?>
         </div>
       </div>
       <div class="banner-of-store">
@@ -453,4 +426,4 @@
           </div>
         </div>
       </div>
-  </div>
+      </div>
