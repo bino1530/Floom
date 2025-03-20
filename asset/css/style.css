@@ -445,9 +445,7 @@ body {
   color: var(--button_color);
   font-weight: 700;
 }
-.best-seller-sales-off span {
-  animation: ani 6s linear infinite;
-}
+
 .Monthly_Flowers {
   margin-top: 100px;
 }

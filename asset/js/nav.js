@@ -41,5 +41,6 @@ $(document).ready(function () {
 
 function hideSidebarcart() {
     $(".custom-sidebar-cart").removeClass("active"); 
+    $("body").removeClass("lock-scroll"); 
     $("#overlay").fadeOut();
 }
