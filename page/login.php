@@ -26,8 +26,7 @@ if (isset($_GET['error'])) {
         </div>
     </header>
     <hr>
-    <main>
-        <div class="grid">
+    <main class="design">
             <section class="login-form">
                 <h3>Log In</h3>
                 <form action="../includes/login.inc.php" method="post">
@@ -51,8 +50,6 @@ if (isset($_GET['error'])) {
                     </div>
                 </form>
             </section>
-
-        </div>
 
     </main>
 

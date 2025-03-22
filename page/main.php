@@ -175,6 +175,7 @@
           online.
         </h4>
       </div>
+      <div class="grid">
       <div class="Media-From-Guest view-show">
         <div class="Media-row">
           <div class="media">
@@ -203,6 +204,8 @@
           </div>
         </div>
       </div>
+      </div>
+      
 
       <div class="Floom-Benefits view-show">
         <h2>Why send flowers with Floom?</h2>

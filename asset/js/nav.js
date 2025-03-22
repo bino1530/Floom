@@ -44,3 +44,13 @@ function hideSidebarcart() {
     $("body").removeClass("lock-scroll"); 
     $("#overlay").fadeOut();
 }
+
+$(document).ready(function () {
+    let scrollList = $(".scroll-list");
+    if (localStorage.getItem("scrollX")) {
+        scrollList.scrollLeft(localStorage.getItem("scrollX"));
+    }
+    $(".button-choose a").click(function () {
+        localStorage.setItem("scrollX", scrollList.scrollLeft());
+    });
+});

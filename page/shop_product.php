@@ -25,8 +25,9 @@ if ($category_id !== 'all') {
 $sta_count->execute();
 $tong_sp = $sta_count->fetchColumn();
 $tong_trang = ceil($tong_sp / $sp_trang);
-$trang_ht = min($tong_trang, max(1, isset($_GET['page']) ? $_GET['page'] : 1));
-$vtbd = ($trang_ht - 1) * $sp_trang;
+$trang_ht = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$trang_ht = max(1, min($tong_trang, $trang_ht)); 
+$vtbd = max(0, ($trang_ht - 1) * $sp_trang); 
 if ($category_id === 'all') {
     $sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC LIMIT " . $vtbd . ", " . $sp_trang;
 } else {
@@ -142,28 +143,29 @@ if ($sta->rowCount() > 0) {
 
                 <div class="product-layout-col col-lg-10 col-sm-12 col-12">
                     <div class="product-main-row row g-4">
-                        <?php
-                        foreach ($product as $pd) {
-                            $imagesArray = json_decode($pd->HinhAnh, true);
-                            $profilePic = "data:image/jpeg;base64," . $imagesArray[0];
-                        ?>
-                            <div class="product-main-col col-lg-4 col-sm-6 col-12">
-                                <div class="product-image">
-                                    <img src="<?= $profilePic ?>" onclick="window.open('shop_product_main.php?id=<?=$pd->SanPham_id?> ','_self')" alt="">
+                        <?php if (!empty($product)) { ?>
+                            <?php foreach ($product as $pd) {
+                                $imagesArray = json_decode($pd->HinhAnh, true);
+                                $profilePic = "data:image/jpeg;base64," . $imagesArray[0];
+                            ?>
+                                <div class="product-main-col col-lg-4 col-sm-6 col-12">
+                                    <div class="product-image">
+                                        <img src="<?= $profilePic ?>" onclick="window.open('shop_product_main.php?id=<?= $pd->SanPham_id ?>','_self')" alt="">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name"><?= $pd->TenSanPham ?></p>
+                                        <p class="product-price1">From <strong><?= $pd->Gia ?>$</strong></p>
+                                    </div>
+                                    <hr>
+                                    <div class="product-price">
+                                        <p class="subcribe">Subscribe for 30% off</p>
+                                        <p class="product-price1">From <strong><?= round($pd->Gia * 0.7, 2) ?>$</strong></p>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <p class="product-name"><?= $pd->TenSanPham ?></p>
-                                    <p class="product-price1">From <strong><?= $pd->Gia ?>$</strong></p>
-                                </div>
-                                <hr>
-                                <div class="product-price">
-                                <p class="subcribe">Subscribe for 30% off</p>
-                                <p class="product-price1">From <strong><?= round($pd->Gia * 0.7, 2) ?>$</strong></p>
-                                </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <p class="no-products">Không có sản phẩm nào.</p>
+                        <?php } ?>
                     </div>
                     <div class="phantrang">
                         <?php

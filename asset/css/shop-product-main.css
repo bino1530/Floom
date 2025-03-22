@@ -20,8 +20,8 @@ main .shopping-layout-row{
     align-items: flex-start; 
 }
 .shopping-image-small-col img{
-    width: 80%;
-    height: 70px;
+    width: 100%;
+    height: 50px;
     margin: 10px 0px;
     border-radius: 10px;
     cursor: pointer;
@@ -33,8 +33,6 @@ main .shopping-layout-row{
 .shopping-topic p{
     width:90%;
 }
-
-
 .select-size-item {
     display: flex;
     justify-content: flex-start;
@@ -76,7 +74,13 @@ main .shopping-layout-row{
     background-color: var(--button_color);
     color: white;
 }
-.subcroptions-content li{
+.subcriptions{
+    padding: 0px;
+}
+.subcriptions-content{
+    padding: 0px;
+}
+.subcriptions-content li{
     list-style:disc !important;
     margin: 20px 0px;
     

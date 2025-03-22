@@ -103,7 +103,7 @@ if (isset($_GET['id'])) {
         <div class="subcriptions">
             <h2>Details, Details, Details</h2>
         </div>
-        <div class="subcroptions-content">
+        <div class="subcriptions-content">
             <ul>
                 <li>"Gold You So” is a design-it-yourself arrangement of fifty (50!) grower's choice daffodils. Daffodils ship straight from the Oregon Farm where they grown to your doorstep wrapped in some protective paper, a piece of burlap, and tied with a bow!</li>
                 <li><strong>What does grower's choice mean?</strong> You bouquet could be fifty of the same variety and/or color or it could be a combination of two (or more!) varieties and/or colors! Sorry, we cannot accommodate special requests for specific colors of varieties.</li>

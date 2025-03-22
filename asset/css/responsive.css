@@ -60,7 +60,7 @@
         justify-content: right;
     }
     .logo img{
-        width: 30%;
+        width: 40% !important;
         cursor: pointer;
         
     }
@@ -75,12 +75,21 @@
         width: 330px;
         margin-top: 50px;
     }
-    
+
+
 }
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .shopping-layout-row{
+        padding: 10px;
+        margin: 0px;
+    }
 
+    .shopping-image-small-col img{
+        width: 100% ;
+        height: 0px ;
+    }
     .navigation .fix{
         display: flex;
         justify-content: left;
@@ -286,6 +295,7 @@
     }
     .custom-sidebar{
         display: block;
+        width: 200px; 
     }
     .login .username{
         display: flex;
@@ -294,6 +304,19 @@
         width: 40%;
         margin-right: 20px;
       }
+      .shopping-layout-row{
+        padding: 10px;
+        margin: 0px;
+    }
+    .subcriptions h2{
+        padding: 20px;
+    }
+    .subcriptions-content p{
+        padding: 20px;
+    }
+    main .shopping-layout-row{
+        margin-top: 100px !important;
+    }
 }
 
 
@@ -506,9 +529,7 @@
         cursor: pointer;
         transition: transform 0.3s ease-in-out , background-color 0.3s ease;
     }
-    .logo-image img{
-        width: 20%;
-    }
+
     .login .username{
         display: flex;
         justify-content: center;
@@ -523,6 +544,7 @@
       .product-main-row{
         margin-left: 0px;
     }
+
 }
 
 @media (max-width: 567px) {
@@ -753,7 +775,7 @@
         font-size: 14px;
     }
     .logo-image img{
-        width: 20%;
+        width: 40% !important;
     }
     .login .username{
         display: flex;
@@ -764,5 +786,32 @@
       .login .username img{
         width: 50%;
         cursor: pointer;
+      }
+      .login-form {
+        width: 350px;
+        margin: 50px auto;
+    }
+      .signup-form {
+        width: 350px;
+        margin: 50px auto;
+    }
+    main .shopping-layout-row{
+        margin-top: 100px !important;
+    }
+    .shopping-layout-row{
+        padding: 10px;
+        margin: 0px;
+    }
+    .shopping-image-small-col {
+        display: none !important;
+    }
+    .subcriptions h2{
+        padding: 10px;
+    }
+    .subcriptions-content p{
+        padding: 10px;
+    }
+    .custom-sidebar-cart {
+        width: 300px; 
       }
 }
