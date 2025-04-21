@@ -22,7 +22,7 @@ if (isset($_SESSION["username"])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="website icon" type="png" href=".asset/image/index/logo.png" />
+  <link rel="icon" type="image/png" href="asset/image/index/logo.png">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -41,21 +41,23 @@ if (isset($_SESSION["username"])) {
   <script src="asset/js/dropdown.js"></script>
   <script src="asset/js/appear.js"></script>
   <script src="asset/js/tabs.js"></script>
+  <script src="asset/js/quanity.js"></script>
   <link rel="stylesheet" href="asset/css/bass.css" />
   <link rel="stylesheet" href="asset/css/style.css" />
   <link rel="stylesheet" href="asset/css/responsive.css" />
   <link rel="stylesheet" href="asset/css/anim.css" />
   <link rel="stylesheet" href="asset/css/profilee.css">
+  <link rel="stylesheet" href="asset/css/checkout.css">
 
   <script></script>
-  <title>Document</title>
+  <title>HomePage</title>
 </head>
 
 <body>
   <div class="header-off">
     <div class="announcement_header">
       <p>
-        Save 20% On The Perfect Valentine's Day Bouquet! Use Code VDAYHEAT
+        Welcome To Floom
       </p>
     </div>
     <header>
@@ -81,26 +83,70 @@ if (isset($_SESSION["username"])) {
               echo "<a href='admin/index.php' class='username'>" . $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
             } else {
               echo "<a href='page/profile.php' class='username'>" . $_SESSION["username"]  . "<img src='" . $profilePic . "' class='profile-image' alt='Profile Picture'> </a>";
-              echo "<a href=''><i class='fa-solid fa-bag-shopping fa-lg'></i></a> ";
-            }
+              $cartCount = 0;
+              if (!empty($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $item) $cartCount += $item['quantity'];
+              }
+              echo "
+              <span class='cart-wrapper'>
+                  <i onclick='toggleSidebarcart()' class='fa-solid fa-bag-shopping cartbutton fa-lg'></i>
+                  <span class='cart-count'>$cartCount</span>
+              </span>";            }
           } else {
+            $cartCount = 0;
+            if (!empty($_SESSION['cart'])) {
+              foreach ($_SESSION['cart'] as $item) $cartCount += $item['quantity'];
+            }
             echo "<a href='page/login.php'><i class='fa-solid fa-user fa-lg'></i></a>";
-            echo "<span href=''><i onclick='toggleSidebar-cart()' class='fa-solid fa-bag-shopping cartbutton fa-lg'></i></span> ";
+            echo "
+            <span class='cart-wrapper'>
+                <i onclick='toggleSidebarcart()' class='fa-solid fa-bag-shopping cartbutton fa-lg'></i>
+                <span class='cart-count'>$cartCount</span>
+            </span>";
           }
           ?>
         </div>
-          <div class="custom-sidebar-cart">
-            <i onclick="hideSidebarcart()" class="fa-solid fa-xmark"></i>
-            <div class="sidebar-content-cart">
-                <div class="cart-empty-image">
-                    <img src="asset/image/index/cart-icon.png" alt="">
-                </div>
+        <div class="custom-sidebar-cart">
+    <i onclick="hideSidebarcart()" class="fa-solid fa-xmark close-cart-icon"></i>
+    <div class="sidebar-content-cart">
+        <?php if (!empty($_SESSION['cart'])): ?>
+            <div class="cart-items-list">
+                <?php foreach ($_SESSION['cart'] as $item): 
+                    $imageSrc = strpos($item['image'], 'data:image') === 0 ? $item['image'] : 'data:image/jpeg;base64,' . base64_encode($item['image']);
+                ?>
+                    <div class="cart-item">
+                        <img src="<?= $imageSrc ?>" alt="<?= $item['name'] ?>" class="cart-thumb">
+                        <div class="cart-info">
+                            <p class="cart-name"><?= $item['name'] ?></p>
+                            <p class="cart-qty">Qty: <?= $item['quantity'] ?></p>
+                            <p class="cart-price"><?= $item['price'] * $item['quantity'] ?>$</p>
+                        </div>
+                        <form method="post" action="includes/cart_trash.inc.php">
+                            <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
+                            <button type="submit" class="cart-remove-btn"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
             </div>
-            <div class="cart-word"> 
+
+            <div class="cart-footer">
+                <div class="cart-total">Total: <strong>
+                    <?= array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $_SESSION['cart'])) ?>$
+                </strong></div>
+                <a href="page/checkout.php" class="btn btn-primary cart-checkout-btn">Checkout</a>
+            </div>
+        <?php else: ?>
+            <div class="cart-empty">
+                <img src="asset/image/index/cart-icon.png" alt="Empty Cart" class="cart-empty-image">
+                <div class="cart-word">
                     <p><strong>Oh no! Your cart is empty</strong></p>
                     <a href="page/shop_product.php" class="cart-shop">Go To Shopping</a>
                 </div>
-          </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
         <div class="sidebar">
           <ul>
             <i onclick="hideSidebar()" class="fa-solid fa-xmark"></i>

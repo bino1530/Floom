@@ -72,7 +72,13 @@ if ($sta->rowCount()) {
                     <th class="lead-info">
                       <h6>Password</h6>
                     </th>
+                    <th class="lead-info">
+                      <h6>Role</h6>
+                    </th>
                     
+                    <th class="lead-company">
+                      <h6>Update</h6>
+                    </th>
                     <th class="lead-company">
                       <h6>Delete</h6>
                     </th>
@@ -116,7 +122,16 @@ if ($sta->rowCount()) {
                       <td class="min-width">
                         <p><?= $us->Userpassword ?></p>
                       </td>
-                     
+                      <td class="min-width">
+                        <p><?= $us->Role ?></p>
+                      </td>
+                      <td>
+                        <div class="action">
+                          <button class="text-success" onclick="window.open('form-user-update.php?id=<?=$us->User_id?>','_self')">
+                            <i class="fa-solid fa-pen"></i>
+                          </button>
+                        </div>
+                      </td>
                       <td>
                         <div class="action">
                           <button class="text-danger">

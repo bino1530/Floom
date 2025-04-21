@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../asset/image/index/logo.png">
     <link rel="stylesheet" href="../asset/css/loginn.css">
     <link rel="stylesheet" href="../asset/css/bass.css">
     <link rel="stylesheet" href="../asset/css/responsive.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <?php
  $uidError = "";

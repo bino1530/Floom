@@ -76,11 +76,6 @@
         margin-top: 50px;
     }
 
-
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
     .shopping-layout-row{
         padding: 10px;
         margin: 0px;
@@ -88,8 +83,13 @@
 
     .shopping-image-small-col img{
         width: 100% ;
-        height: 0px ;
+        height: 70px ;
     }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
     .navigation .fix{
         display: flex;
         justify-content: left;

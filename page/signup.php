@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../asset/image/index/logo.png">
     <link rel="stylesheet" href="../asset/css/loginn.css">
     <link rel="stylesheet" href="../asset/css/bass.css">
     <link rel="stylesheet" href="../asset/css/responsive.css">
 
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 <?php
 $nameError = $emailError = $uidError = $pwdError = $pwdRepeatError = "";
@@ -30,6 +31,7 @@ if (isset($_GET['error'])) {
     }
 }
 ?>
+
 <body>
     <header>
         <div class="logo-image">
@@ -42,30 +44,51 @@ if (isset($_GET['error'])) {
             <section class="signup-form">
                 <h3>Sign Up</h3>
                 <form action="../includes/signup.inc.php" method="post">
-                <div class="row">
+                    <div class="row">
                         <label for="">Full Name</label>
                         <input type="text" name="name" placeholder="Full Name...">
-                        <?php if (!empty($nameError)) echo "<p class='error'>$nameError</p>"; ?>
                     </div>
                     <div class="row">
                         <label for="">Email</label>
                         <input type="text" name="email" placeholder="Email...">
-                        <?php if (!empty($emailError)) echo "<p class='error'>$emailError</p>"; ?>
                     </div>
                     <div class="row">
                         <label for="">User Name</label>
                         <input type="text" name="uid" placeholder="User Name...">
-                        <?php if (!empty($uidError)) echo "<p class='error'>$uidError</p>"; ?>
                     </div>
                     <div class="row">
                         <label for="">Password</label>
                         <input type="password" name="pwd" placeholder="PassWord...">
-                        <?php if (!empty($pwdError)) echo "<p class='error'>$pwdError</p>"; ?>
                     </div>
                     <div class="row">
                         <label for="">Password Repeat</label>
                         <input type="password" name="pwdrepeat" placeholder="PassWord Repeat...">
-                        <?php if (!empty($pwdRepeatError)) echo "<p class='error'>$pwdRepeatError</p>"; ?>
+                    </div>
+                    <div class="row">
+                        <?php
+                        $displayed = false;
+
+                        if (!empty($nameError) && !$displayed) {
+                            echo "<p class='error'>$nameError</p>";
+                            $displayed = true;
+                        }
+                        if (!empty($emailError) && !$displayed) {
+                            echo "<p class='error'>$emailError</p>";
+                            $displayed = true;
+                        }
+                        if (!empty($uidError) && !$displayed) {
+                            echo "<p class='error'>$uidError</p>";
+                            $displayed = true;
+                        }
+                        if (!empty($pwdError) && !$displayed) {
+                            echo "<p class='error'>$pwdError</p>";
+                            $displayed = true;
+                        }
+                        if (!empty($pwdRepeatError) && !$displayed) {
+                            echo "<p class='error'>$pwdRepeatError</p>";
+                            $displayed = true;
+                        }
+                        ?>
                     </div>
                     <input type="submit" name="submit" value="Sign Up">
                     <div class="row">

@@ -1,0 +1,183 @@
+
+
+.checkout-wrapper {
+    max-width: 1100px;
+    margin: auto;
+}
+.checkout-logo {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.checkout-logo img {
+    height: 60px;
+    object-fit: contain;
+}
+.checkout-container {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-left, .checkout-right {
+    padding: 30px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.checkout-left {
+    border-right: 1px solid #eee;
+}
+
+.checkout-left h1 {
+    margin-top: 0;
+}
+
+.checkout-left input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-checkout {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #1e2934;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.btn-checkout:hover {
+    background-color: #162028;
+}
+
+.checkout-right h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.checkout-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.checkout-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details p {
+    margin: 4px 0;
+}
+.item-details a{
+    text-decoration: none;
+    color: black;
+    font-size: bold;
+    
+}
+
+.checkout-summary {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.empty-cart a {
+    color: #1e2934;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* ... phần cũ giữ nguyên ... */
+
+.checkout-left select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.city-zip {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.city-zip input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 8px;
+}
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #1e2934 ;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+}
+
+.btn-back:hover {
+    background-color: #162028;
+}
+
+.btn-back::before {
+    content: "\2190";  
+    margin-right: 8px;  
+    font-size: 18px;  
+}

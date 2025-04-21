@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
                         <div class="shopping-content-col col-lg-12 col-sm-12 col-12">
                             <div class="shopping-topic">
                                 <h1 class="topic"><?= $product->TenSanPham ?></h1>
-                                <p><?= $product -> MoTaSP?></p>
+                                <p><?= $product->MoTaSP ?></p>
                             </div>
                             <div class="select-size">
                                 <p><strong>Select-size</strong></p>
@@ -87,9 +87,18 @@ if (isset($_GET['id'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-to-cart">
-                                <a href="">Add to cart - <?= $product->Gia ?>$</a>
-                            </div>
+                            <form method="post" action="../includes/cart.inc.php">
+                                <input type="hidden" name="product_id" value="<?= $product->SanPham_id ?>">
+                                <input type="hidden" name="product_name" value="<?= $product->TenSanPham ?>">
+                                <input type="hidden" name="price" value="<?= $product->Gia ?>">
+                                <input type="hidden" name="image" value="<?= $imagesArray[0] ?>">
+                                <div class="quantity-wrapper">
+                                    <button type="button" class="qty-btn minus">-</button>
+                                    <input type="number" name="quantity" value="1" min="1" class="qty-input">
+                                    <button type="button" class="qty-btn plus">+</button>
+                                </div>
+                                <button type="submit" class="addtocartbutton">Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 </div>

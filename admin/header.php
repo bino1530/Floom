@@ -21,6 +21,7 @@ session_start();
     <link rel="stylesheet" href="assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="../asset/css/bass.css" />
+    <link rel="stylesheet" href="../asset/css/shop-product.css">
   </head>
   <body>
 

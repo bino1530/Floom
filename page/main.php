@@ -62,17 +62,25 @@
           ?>
               <div class="best-seller-col col-lg-3 col-sm-6 col-12 view-show">
                 <div class="best-seller-image new">
-                  <img src="<?= $profilePic ?>" alt="" />
+                  <img src="<?= $profilePic ?>" onclick="window.open('page/shop_product_main.php?id=<?= $product->SanPham_id ?>','_self')" alt="" />
                 </div>
                 <div class="best-seller-info">
                   <p><strong><?= $product->TenSanPham ?></strong></p>
-                  <p>from <strong><?= $product->Gia?>$</strong></p>
+                  <p>from <strong><?= $product->Gia ?>$</strong></p>
                 </div>
                 <hr />
                 <div class="best-seller-sales-off">
                   <span class="text-blue">Subscribe for 30% off</span>
                   <span class="text-blue">from <?= round($product->Gia * 0.7, 2) ?></span>
                 </div>
+                <!-- 👇 Nút Add to Cart -->
+                <form method="post" action="includes/cart.inc.php">
+                  <input type="hidden" name="product_id" value="<?= $product->SanPham_id ?>">
+                  <input type="hidden" name="product_name" value="<?= $product->TenSanPham ?>">
+                  <input type="hidden" name="price" value="<?= $product->Gia ?>">
+                  <input type="hidden" name="image" value="<?= $imagesArray[0] ?>">
+                  <button type="submit" class="addtocartbutton">Add to Cart</button>
+                </form>
               </div>
           <?php
             }
@@ -176,36 +184,36 @@
         </h4>
       </div>
       <div class="grid">
-      <div class="Media-From-Guest view-show">
-        <div class="Media-row">
-          <div class="media">
-            <div class="video-overlay"></div>
-            <video class="media-1-source media-position" autoplay muted loop>
-              <source
-                src="asset/media/bed_side_bouquet (1080p).mp4"
-                type="video/mp4" />
-            </video>
-          </div>
-          <div class="media">
-            <div class="video-overlay-bottom"></div>
-            <video class="media-2-source media-position" autoplay muted loop>
-              <source
-                src="asset/media/floom-uk-london-sameday_delivery-editorial3 (1080p).mp4"
-                type="video/mp4" />
-            </video>
-          </div>
-          <div class="media">
-            <div class="video-overlay"></div>
-            <video class="media-3-source media-position" autoplay muted loop>
-              <source
-                src="asset/media/untitled (1080p).mp4"
-                type="video/mp4" />
-            </video>
+        <div class="Media-From-Guest view-show">
+          <div class="Media-row">
+            <div class="media">
+              <div class="video-overlay"></div>
+              <video class="media-1-source media-position" autoplay muted loop>
+                <source
+                  src="asset/media/bed_side_bouquet (1080p).mp4"
+                  type="video/mp4" />
+              </video>
+            </div>
+            <div class="media">
+              <div class="video-overlay-bottom"></div>
+              <video class="media-2-source media-position" autoplay muted loop>
+                <source
+                  src="asset/media/floom-uk-london-sameday_delivery-editorial3 (1080p).mp4"
+                  type="video/mp4" />
+              </video>
+            </div>
+            <div class="media">
+              <div class="video-overlay"></div>
+              <video class="media-3-source media-position" autoplay muted loop>
+                <source
+                  src="asset/media/untitled (1080p).mp4"
+                  type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      
+
 
       <div class="Floom-Benefits view-show">
         <h2>Why send flowers with Floom?</h2>

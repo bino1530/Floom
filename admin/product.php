@@ -3,15 +3,21 @@ include("header.php");
 //B1 Kết nối CSDL
 include("../includes/connect.php");
 
-$sql = "SELECT * FROM tb_sanpham ORDER BY SanPham_id ASC";
+$sp_trang = 5;
+$sql = "SELECT * FROM tb_sanpham ORDER BY TenSanPham ASC";
 $sta = $conn->prepare($sql);
 $sta->execute();
+$sanpham = $sta->fetchAll(PDO::FETCH_OBJ);
+$tong_sp = count($sanpham);
+$tong_trang = ceil($tong_sp / $sp_trang);
+$trang_ht = min($tong_trang, max(1, isset($_GET['page']) ? $_GET['page'] : 1));
+$vtbd = ($trang_ht - 1) * $sp_trang;
 
-$product = array(); // Khởi tạo biến $product để tránh lỗi undefined
+$sql .= " LIMIT ".$vtbd.", ".$sp_trang;
 
-if ($sta->rowCount() > 0) {
-  $product = $sta->fetchAll(PDO::FETCH_OBJ);
-}
+$sta = $conn->prepare($sql);
+$sta->execute();
+$sanpham = $sta->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!-- ========== table components start ========== -->
@@ -87,9 +93,9 @@ if ($sta->rowCount() > 0) {
                 </thead>
                 <tbody>
                   <?php
-                  if (!empty($product)) {
-                    $i = 1;
-                    foreach ($product as $product) {
+                  if (!empty($sanpham)) {
+                    $i = $vtbd +1;  
+                    foreach ($sanpham as $product) {
                       $imagesArray = json_decode($product->HinhAnh, true);
                       $profilePic = "data:image/jpeg;base64," . $imagesArray[0]; 
                   ?>
@@ -143,6 +149,21 @@ if ($sta->rowCount() > 0) {
                   ?>
                 </tbody>
               </table>
+              <div class="phantrang">
+                  <?php
+                  for($so = 1 ; $so <= $tong_trang; $so++) {
+                      if($so != $trang_ht) {
+                  ?>
+                  <a href="?id=&page=<?=$so?>"><?=$so?></a>
+                  <?php
+                      } else {
+                  ?>
+                  <span class="current-page"><?=$so?></span>
+                  <?php
+                      }
+                  }
+                  ?>
+              </div>
               <!-- end table -->
             </div>
           </div>
