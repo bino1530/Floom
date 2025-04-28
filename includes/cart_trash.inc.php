@@ -6,6 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['product_id'])) {
         unset($_SESSION['cart'][$productId]);
     }
 }
-header('Location: ../index.php');
+header("Location: " . $_SERVER['HTTP_REFERER']);
 exit();
 ?>

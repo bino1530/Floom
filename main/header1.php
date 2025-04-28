@@ -127,7 +127,7 @@ if (isset($_SESSION["username"])) {
                           <p class="cart-qty">Qty: <?= $item['quantity'] ?></p>
                           <p class="cart-price"><?= $item['price'] * $item['quantity'] ?>$</p>
                       </div>
-                      <form method="post" action="includes/cart_trash.inc.php">
+                      <form method="post" action="../includes/cart_trash.inc.php">
                           <input type="hidden" name="product_id" value="<?= $item['id'] ?>">
                           <button type="submit" class="cart-remove-btn"><i class="fa-solid fa-trash"></i></button>
                       </form>

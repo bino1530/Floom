@@ -29,7 +29,7 @@ if($khachang){
                 <div class="order-card">
                     <p><strong>Order ID:</strong> <?= $order['DonHang_id'] ?></p>
                     <p><strong>Date:</strong> <?= date("d/m/Y", strtotime($order['NgayLap'])) ?></p>
-                    <p><strong>Total:</strong> <?= number_format($order['TongTien'], 0, ',', '.') ?>₫</p>
+                    <p><strong>Total:</strong> <?= number_format($order['TongTien'], 0, ',', '.') ?>$</p>
                     <a href="order-detail-main.php?id=<?= $order['DonHang_id'] ?>">View Details</a>
                 </div>
             <?php endforeach; ?>
