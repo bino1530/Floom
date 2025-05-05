@@ -1,105 +1,116 @@
-
 body {
     padding: 0;
     margin: 0;
-  }
-.logo-image a{
+    background: #f7f7f7;
+}
+
+.logo-image a {
     width: 70%;
     margin: 0 auto;
-    padding: 10px 0px;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-image img{
+.logo-image img {
     width: 10%;
 }
 
-.signup-form {
+.signup-form, .login-form {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     width: 400px;
-    animation: fadeIn 1s ease-in-out;
-    margin: 50px auto;
-}
-.design{
-    padding: 20px;
-}
-.login-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    animation: fadeIn 1s ease-in-out;
-    margin: 50px auto;
+    animation: fadeIn 0.8s ease-in-out;
+    margin: 60px auto;
+    transition: transform 0.3s ease;
 }
 
+
+.design {
+    padding: 20px;
+}
 
 h3 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #333;
-}
-
-.row {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #555;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    background-color: #f9f9f9;
+}
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: var(--input_focus_color);
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+    background-color: #fff;
+    outline: none;
+    animation: bounceInput 0.3s ease;
+}
+
+@keyframes bounceInput {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.05); }
+    60%  { transform: scale(0.97); }
+    100% { transform: scale(1); }
 }
 
 input[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: var(--button_color);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 20px 0px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin: 25px 0 10px;
 }
-
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #072341;
+    transform: translateY(-2px);
 }
 
-.error{
-    margin: 5px 0px;
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+.error {
+    margin: 5px 0;
     text-align: right;
     color: darkred;
 }
-
-.presslogin{
+.presslogin {
     text-align: center;
     color: #797979;
-    margin: 0px;
+    margin: 0;
 }
-
-
-
-.row a{
+.row {
+    margin-bottom: 18px;
+}
+.row a {
     font-weight: bold;
+    color: #333;
+    text-decoration: none;
 }
-.row a:hover{
+.row a:hover {
     border-bottom: 1px solid #797979;
 }
 

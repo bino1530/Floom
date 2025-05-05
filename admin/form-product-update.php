@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="title">
-              <h2>product Update</h2>
+              <h2>Product Update</h2>
             </div>
           </div>
           <!-- end col -->

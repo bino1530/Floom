@@ -1,0 +1,25 @@
+.mainabout{
+    margin-top: 150px;
+}
+.background-about img{
+    width: 100%;
+}
+.topic{
+    margin-top: 20px;
+}
+.aboutus-content{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;   
+}
+.content-left{
+    max-width: 700px;
+}
+.content-right img{
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    margin: 20px;
+    border-radius: 10px;
+
+}

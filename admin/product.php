@@ -2,9 +2,10 @@
 include("header.php");
 //B1 Kết nối CSDL
 include("../includes/connect.php");
-
 $sp_trang = 5;
-$sql = "SELECT * FROM tb_sanpham ORDER BY TenSanPham ASC";
+$sql = "SELECT sp.*, dm.TenDanhMuc FROM tb_sanpham sp 
+        JOIN tb_danhmuc dm ON sp.Ma_DanhMuc = dm.MaDanhMuc";
+$sql .= "  ORDER BY sp.TenSanPham ASC ";
 $sta = $conn->prepare($sql);
 $sta->execute();
 $sanpham = $sta->fetchAll(PDO::FETCH_OBJ);
@@ -74,7 +75,7 @@ $sanpham = $sta->fetchAll(PDO::FETCH_OBJ);
                       <h6>Product Price </h6>
                     </th>
                     <th class="lead-info">
-                      <h6>Quantity</h6>
+                      <h6>Product List</h6>
                     </th>
                     <th class="lead-info">
                       <h6>Creator</h6>
@@ -117,7 +118,7 @@ $sanpham = $sta->fetchAll(PDO::FETCH_OBJ);
                         <p><?= $product->Gia ?>$</p>
                       </td>
                       <td class="min-width">
-                        <p><?= $product->SLKho ?></p>
+                      <p><?= $product->TenDanhMuc ?></p> <!-- Display the category name -->
                       </td>
                       <td class="min-width">
                         <p><?= $product->NguoiTao ?></p>

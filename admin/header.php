@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
+    header("Location: ../index.php");
+    exit();
+}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -51,7 +51,8 @@ if (isset($_SESSION["username"])) {
   <link rel="stylesheet" href="../asset/css/shop-product.css">
   <link rel="stylesheet" href="../asset/css/shop-product-main.css">
   <link rel="stylesheet" href="../asset/css/checkout.css">
-  <script></script>
+  <link rel="stylesheet" href="../asset/css/aboutus.css">
+  <link rel="stylesheet" href="../asset/css/subs.css">
   <title>Shop</title>
 </head>
 
@@ -73,8 +74,8 @@ if (isset($_SESSION["username"])) {
               <i class="fa-solid fa-bars bars" onclick="showSidebar()"></i>
             </li>
             <li><a class="nav-off" href="../page/shop_product.php">Shop</a></li>
-            <li><a class="nav-off" href="">Subscription</a></li>
-            <li><a class="nav-off" href="">About Us</a></li>
+            <li><a class="nav-off" href="../page/subscrip.php">Subscription</a></li>
+            <li><a class="nav-off" href="../page/aboutus.php">About Us</a></li>
           </ul>
         </div>
         <div class="logo">
@@ -156,9 +157,9 @@ if (isset($_SESSION["username"])) {
       <div class="sidebar">
         <ul>
           <i onclick="hideSidebar()" class="fa-solid fa-xmark"></i>
-          <li class="dropdown-topic-main"><a href="page/shop_product.php">Shop</a></li>
-          <li class="dropdown-topic-main"><a href="">Subscription</a></li>
-          <li class="dropdown-topic-main"><a href="">About Us</a></li>
+          <li class="dropdown-topic-main"><a href="../page/shop_product.php">Shop</a></li>
+          <li class="dropdown-topic-main"><a href="../page/subscrip.php">Subscription</a></li>
+          <li class="dropdown-topic-main"><a href="../page/aboutus.php">About Us</a></li>
         </ul>
       </div>
     </div>

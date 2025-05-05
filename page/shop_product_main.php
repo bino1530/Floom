@@ -109,7 +109,7 @@ if (isset($_GET['id'])) {
     ?>
     <hr>
     <div class="grid">
-        <div class="subcriptions">
+        <div class="subcriptionss">
             <h2>Details, Details, Details</h2>
         </div>
         <div class="subcriptions-content">

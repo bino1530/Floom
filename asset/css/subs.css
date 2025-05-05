@@ -1,0 +1,84 @@
+main{
+    margin-top: 120px;
+}
+.banner-img{
+    position: relative;
+    width: 100%;
+}
+.banner-img img{
+    width: 100%;
+}
+.banner-content{
+    position: absolute;
+    left: 0;
+    top: 35%;
+    bottom: 50%;
+    transform: translate(15%, -50%);
+    width: 530px;
+}
+.banner-content p{
+    color: white;
+    font-weight: 700px;
+}
+.banner-content h2{
+    color: var(--button_color);
+    font-weight: 700px;
+}
+.infomation{
+    display: flex;
+    margin-top: 10px;
+}
+.infomation img{
+    max-width: 30px;
+    width: 100%;
+}
+.infomation p{
+    margin:0px 10px;
+}
+.topicofsubs{
+    margin: 20px 0px;
+    text-align: center;
+}
+.brand-row{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.brand-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.brand-logo img{
+    max-width: 60px;
+    width: 100%;
+    margin: 0px 10px;
+}
+.brand-logo-deli img{
+    max-width: 100px;
+    width: 100%;
+}
+.brand-col hr{
+    width: 90%;
+    padding: 1px;
+}
+.subcriptions{
+    background-color: rgb(250, 242, 234);
+    margin-top: 20px;
+    padding: 70px 20px;
+    text-align: center;
+}
+.subs-img img{
+    max-width: 70px;
+    width: 100%;
+    margin: 10px 0px;
+}
+.subs-topic{
+    color: var(--button_color);
+}
+.season p{
+    text-align: center;
+}

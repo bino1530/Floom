@@ -11,7 +11,7 @@ $stmt = $conn->prepare("
 $stmt->execute([$order_id]);
 $order = $stmt->fetch();
 if (!$order) {
-    echo "Order not found.";
+    echo "khong tim thay";
     exit;
 }
 $stmt = $conn->prepare("

@@ -47,5 +47,7 @@ textarea {
 :root{
     --button_color : #1e2934;
     --bg_pink: rgb(255 239 233);
+    --input_focus_color: #0d243d;
+
 }
 
