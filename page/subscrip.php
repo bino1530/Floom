@@ -1,3 +1,4 @@
+
 <?php
 include("../main/header1.php");
 ?>
@@ -119,9 +120,79 @@ include("../main/header1.php");
             <h2>New Floom Every Season</h2>
             <p>Get access to our Subscription Collection of 50+ farm-fresh Bouqs with everything from seasonal arrangements to tried and true classics, plants and premium upgrades.</p>
         </div>
+        <div class="season-topic">
+            <div class="season-buttons">
+                <button data-season="evergreen">Evergreen</button>
+                <button data-season="fall">Fall</button>
+                <button data-season="winter">Winter</button>
+                <button data-season="valentine">Valentine's Day</button>
+                <button data-season="spring">Spring</button>
+                <button data-season="summer">Summer</button>
+            </div>
+            <div class="season-flowers-row row">
+                <div class="season-flowers" data-season="evergreen">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Invergreen.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Invergreen1.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Invergreen2.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Invergreen3.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Invergreen4.jpg" alt="">
+                </div>
+            </div>
+            <div class="season-flowers-row row">
+                <div class="season-flowers" data-season="fall">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Fall.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Fall1.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Fall2.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Fall3.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Fall4.avif" alt="">
+                </div>
+            </div>
+            <div class="season-flowers-row row">
+                <div class="season-flowers " data-season="winter">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Winter.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Winter1.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Winter2.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Winter3.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Winter4.avif" alt="">
+                </div>
+            </div>
 
+            <div class="season-flowers-row row">
+                <div class="season-flowers " data-season="valentine">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Valen.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Valen1.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Valen2.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Valen3.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Valen4.avif" alt="">
+                </div>
+            </div>
+
+            <div class="season-flowers-row row">
+                <div class="season-flowers " data-season="spring">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Spring.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Spring1.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Spring2.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Spring3.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Spring4.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="season-flowers-row row">
+                <div class="season-flowers " data-season="summer">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Summer.avif" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Summer1.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Summer2.jpeg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Summer3.jpg" alt="">
+                    <img class="flower-img col-lg-2 col-sm-2 col-12" src="../asset/image/Subscription/Summer4.avif" alt="">
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </main>
+<script src="../asset/js/tabs.js"></script>
+
 <?php
 include("../main/footer.php");
 ?>

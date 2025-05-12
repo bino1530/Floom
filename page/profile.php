@@ -1,5 +1,10 @@
 <?php
+
 include_once '../main/header1.php';
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'User') {
+    header("Location: ../page/login.php");
+    exit();
+}
 ?>
 <div class="grid">
     <div class="profile-page-row row">
@@ -18,7 +23,7 @@ include_once '../main/header1.php';
         </div>
         <div class="profile-page-col col-lg-9 col-sm-12 col-12 profile-main">
             <?php
-            $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // Mặc định là dashboard
+            $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; 
             switch ($page) {
                 case 'profile':
                     include 'profile_dashboard.php';

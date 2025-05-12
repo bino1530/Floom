@@ -82,3 +82,50 @@ main{
 .season p{
     text-align: center;
 }
+.season-topic {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .season-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .season-buttons button {
+    background-color: var(--button_color);
+    color: white;
+    padding: 15px 40px;
+    width: 120px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .season-buttons button:hover {
+    background-color: #061625;
+  }
+
+  .season-flowers {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: start;
+    justify-items: center;
+  }
+  
+.season-flowers.active {
+    display: grid;
+  }
+  .season-flowers img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }

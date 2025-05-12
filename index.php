@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 include_once 'main/header.php';
 ?>
 <html>

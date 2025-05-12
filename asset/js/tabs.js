@@ -13,3 +13,11 @@ $(document).ready(function(){
         }
     });
 });
+$(document).ready(function () {
+    $('.season-flowers[data-season="evergreen"]').addClass('active');
+    $('.season-buttons button').click(function () {
+      const season = $(this).data('season');
+      $('.season-flowers').removeClass('active').hide();
+      $(`.season-flowers[data-season="${season}"]`).addClass('active').fadeIn();
+    });
+  });

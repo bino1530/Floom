@@ -1,22 +1,23 @@
 <?php
+ob_start();
+include_once '../mail/index.php';
+$mail = new Mailer();
 session_start();
 require_once '../includes/connect.php';
-
 if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
-
     $sql = "SELECT HinhAnh FROM tb_user WHERE Username = :username";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
     if ($user && !empty($user["HinhAnh"])) {
         $profilePic = "data:image/jpeg;base64," . base64_encode($user["HinhAnh"]);
     } else {
         $profilePic = "../asset/image/index/smile.png"; 
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +54,7 @@ if (isset($_SESSION["username"])) {
   <link rel="stylesheet" href="../asset/css/checkout.css">
   <link rel="stylesheet" href="../asset/css/aboutus.css">
   <link rel="stylesheet" href="../asset/css/subs.css">
+  <link rel="stylesheet" href="../asset/css/resetpassword.css">
   <title>Shop</title>
 </head>
 

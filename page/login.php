@@ -38,6 +38,8 @@ if (isset($_GET['error'])) {
                     <div class="row">
                         <label for="">Password</label>
                         <input type="password" name="pwd" placeholder="PassWord...">
+                        <p class="pressforgot"><a href="forgot_pass.php"> Forgot Password</a></p>
+
                     </div>
                     <div class="row">
                         <?php if (!empty($uidError)) echo "<p class='error'>$uidError</p>"; ?>
@@ -51,7 +53,6 @@ if (isset($_GET['error'])) {
                     </div>
                 </form>
             </section>
-
     </main>
 
 </body>

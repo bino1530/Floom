@@ -5,7 +5,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
     exit();
 }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -244,6 +243,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
               </li>
               <li>
                 <a href="productlist.php"> Product List </a>
+              </li>
+              <li>
+                <a href="guest.php"> Guest </a>
               </li>
             </ul>
           </li>

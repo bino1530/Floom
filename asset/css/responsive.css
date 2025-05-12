@@ -814,4 +814,14 @@
     .custom-sidebar-cart {
         width: 300px; 
       }
+    .login-form{
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
+    .signup-form{
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
 }
